@@ -58,7 +58,7 @@ namespace DataAccessLayer
 
             SqlCommand command = new SqlCommand();
             command.Connection = connection;
-            command.CommandText = "SELECT * FROM CLIENTE ORDER BY ID";
+            command.CommandText = "SELECT * FROM CLIENTES ORDER BY ID";
 
             DataResponse<Clientes> resposta = new DataResponse<Clientes>();
 
@@ -71,16 +71,16 @@ namespace DataAccessLayer
                 while (reader.Read())
                 {
                     Clientes cliente = new Clientes();
-                    cliente.ID = Convert.ToInt32(reader["ID"]);
                     cliente.Nome = Convert.ToString(reader["NOME"]);
-                    cliente.CPF = Convert.ToInt32(reader["CPF"]);
-                    cliente.RG = Convert.ToInt32(reader["RG"]);
-                    cliente.TelefoneCelualar = Convert.ToInt32(reader["TELEFONE_CELULAR"]);
-                    cliente.TelefoneFixo = Convert.ToInt32(reader["TELEFONE_FIXO"]);
+                    cliente.CPF = Convert.ToString(reader["CPF"]);
+                    cliente.RG = Convert.ToString(reader["RG"]);
+                    cliente.TelefoneCelular = Convert.ToString(reader["TELEFONE_CELULAR"]);
+                    cliente.TelefoneFixo = Convert.ToString(reader["TELEFONE_FIXO"]);
                     cliente.Email = Convert.ToString(reader["EMAIL"]);
                     cliente.DataNascimento = Convert.ToDateTime(reader["DATA_NASCIMENTO"]);
                     cliente.DataMatricula = Convert.ToDateTime(reader["DATA_MATRICULA"]);
                     cliente.Ativo = Convert.ToBoolean(reader["ATIVO"]);
+                    cliente.Genero = Convert.ToString(reader["GENERO"]);
 
                     clientes.Add(cliente);
                 }
@@ -120,7 +120,7 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@NOME", c.Nome);
             command.Parameters.AddWithValue("@CPF", c.CPF);
             command.Parameters.AddWithValue("@RG", c.RG);
-            command.Parameters.AddWithValue("@TELEFONE_CELULAR", c.TelefoneCelualar);
+            command.Parameters.AddWithValue("@TELEFONE_CELULAR", c.TelefoneCelular);
             command.Parameters.AddWithValue("@TELEFONE_FIXO", c.TelefoneFixo);
             command.Parameters.AddWithValue("@EMAIL", c.Email);
             command.Parameters.AddWithValue("@DATA_NASCIMENTO", c.DataNascimento);
@@ -174,7 +174,7 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@ID", c.ID);
             command.Parameters.AddWithValue("@CPF", c.CPF);
             command.Parameters.AddWithValue("@RG", c.RG);
-            command.Parameters.AddWithValue("@TELEFONE_CELULAR", c.TelefoneCelualar);
+            command.Parameters.AddWithValue("@TELEFONE_CELULAR", c.TelefoneCelular);
             command.Parameters.AddWithValue("@TELEFONE_FIXO", c.TelefoneFixo);
             command.Parameters.AddWithValue("@EMAIL", c.Email);
             command.Parameters.AddWithValue("@DATA_NASCIMENTO", c.DataNascimento);

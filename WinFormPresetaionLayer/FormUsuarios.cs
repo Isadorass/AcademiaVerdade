@@ -13,61 +13,72 @@ using System.Windows.Forms;
 
 namespace WinFormsPresentationLayer
 {
-    public partial class FormCadastroDeProdutos : Form
+    public partial class FormUsuarios : Form
     {
         private StandardValidation standardValidation = new StandardValidation();
-        private ProdutosBLL produtosBLL = new ProdutosBLL();
+        private UsuariosBLL usuariosBLL = new UsuariosBLL();
 
-        public FormCadastroDeProdutos()
+        public FormUsuarios()
         {
             InitializeComponent();
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            bool nomeProduto, qntdEstoque, descricaoProduto, suplementos, 
-                 mantimentos, acessorios;
 
-            if (standardValidation.ValidationsNome(txtNomeProduto.Text).Equals(""))
+            bool nome, email, senha, papel;
+
+            if (standardValidation.ValidationsEmail(txtNome.Text).Equals(""))
             {
-                lblNomeProduto.ForeColor = Color.Red;
-                nomeProduto = false;
+                lblNome.ForeColor = Color.Red;
+                nome = false;
             }
             else
             {
-                lblNomeProduto.ForeColor = Color.Black;
-                nomeProduto = true;
+                lblNome.ForeColor = Color.Black;
+                nome = true;
             }
 
-            if (standardValidation.ValidationsNome(txtQntdEstoqueProduto.Text).Equals(""))
+            if (standardValidation.ValidationsEmail(txtEmail.Text))
             {
-                lblEstoque.ForeColor = Color.Red;
-                qntdEstoque = false;
+                lblEmail.ForeColor = Color.Black;
+                email = true;
             }
             else
             {
-                lblEstoque.ForeColor = Color.Black;
-                qntdEstoque = true;
+                lblEmail.ForeColor = Color.Red;
+                email = false;
             }
 
-            if (standardValidation.ValidationsNome(txtDescricaoProduto.Text).Equals(""))
+            if (standardValidation.ValidationsSenha(txtSenha.Text))
             {
-                lblDescricaoProduto.ForeColor = Color.Red;
-                descricaoProduto = false;
+                lblSenha.ForeColor = Color.Black;
+                senha = true;
             }
             else
             {
-                lblDescricaoProduto.ForeColor = Color.Black;
-                descricaoProduto = true;
+                lblSenha.ForeColor = Color.Red;
+                senha = false;
+            }
+
+            if (standardValidation.ValidationsPapel(cmbPapel.Text))
+            {
+                lblPapel.ForeColor = Color.Black;
+                papel = true;
+            }
+            else
+            {
+                lblPapel.ForeColor = Color.Red;
+                papel = false;
             }
         }
 
         private void AtualizarGrid()
         {
-            DataResponse<Produtos> response = produtosBLL.GetAll();
+            DataResponse<Usuarios> response = usuariosBLL.GetAll();
             if (response.Success)
             {
-                this.dgvCadastroProdutos.DataSource = response.Data;
+                this.dgvCadastrarUsuarios.DataSource = response.Data;
             }
             else
             {
@@ -82,7 +93,7 @@ namespace WinFormsPresentationLayer
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            Response r = produtosBLL.Delete(int.Parse(txtNomeProduto.Text));
+            Response r = usuariosBLL.Delete(int.Parse(txtNome.Text));
             MessageBox.Show(r.Message);
             if (r.Success)
             {
@@ -92,10 +103,10 @@ namespace WinFormsPresentationLayer
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            Response r = produtosBLL.Update(new Produtos()
+            Response r = usuariosBLL.Update(new Usuarios()
             {
-                ID = int.Parse(txtNomeProduto.Text),
-                Nome = txtNomeProduto.Text
+                ID = int.Parse(txtNome.Text),
+                Nome = txtNome.Text
             });
             MessageBox.Show(r.Message);
             if (r.Success)

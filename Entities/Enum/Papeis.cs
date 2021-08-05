@@ -8,8 +8,8 @@ namespace Entites.Enum
 {
     public enum Papeis
     {
-        PROFESSORES,
-        RECEPCAO,
+        PROFESSOR,
+        RECEPÇÂO,
         ADMINISTRADOR
     }
 }

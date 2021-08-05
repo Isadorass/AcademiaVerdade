@@ -29,11 +29,11 @@ namespace WinFormsPresentationLayer
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblDescricao = new System.Windows.Forms.Label();
+            this.lblDescricaoProduto = new System.Windows.Forms.Label();
             this.txtDescricaoProduto = new System.Windows.Forms.TextBox();
-            this.lblNome = new System.Windows.Forms.Label();
+            this.lblNomeProduto = new System.Windows.Forms.Label();
             this.lblEstoque = new System.Windows.Forms.Label();
-            this.txtQntdEstoque = new System.Windows.Forms.TextBox();
+            this.txtQntdEstoqueProduto = new System.Windows.Forms.TextBox();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.chMantimentos = new System.Windows.Forms.CheckBox();
             this.chSuplementos = new System.Windows.Forms.CheckBox();
@@ -47,107 +47,110 @@ namespace WinFormsPresentationLayer
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadastroProdutos)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblDescricao
+            // lblDescricaoProduto
             // 
-            this.lblDescricao.AutoSize = true;
-            this.lblDescricao.BackColor = System.Drawing.Color.Transparent;
-            this.lblDescricao.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblDescricao.Location = new System.Drawing.Point(32, 103);
-            this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(109, 13);
-            this.lblDescricao.TabIndex = 43;
-            this.lblDescricao.Text = "Descrição do produto";
+            this.lblDescricaoProduto.AutoSize = true;
+            this.lblDescricaoProduto.BackColor = System.Drawing.Color.Transparent;
+            this.lblDescricaoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescricaoProduto.ForeColor = System.Drawing.Color.Black;
+            this.lblDescricaoProduto.Location = new System.Drawing.Point(28, 88);
+            this.lblDescricaoProduto.Name = "lblDescricaoProduto";
+            this.lblDescricaoProduto.Size = new System.Drawing.Size(152, 18);
+            this.lblDescricaoProduto.TabIndex = 43;
+            this.lblDescricaoProduto.Text = "Descrição do produto";
             // 
             // txtDescricaoProduto
             // 
             this.txtDescricaoProduto.BackColor = System.Drawing.SystemColors.Window;
             this.txtDescricaoProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDescricaoProduto.Location = new System.Drawing.Point(35, 119);
+            this.txtDescricaoProduto.Location = new System.Drawing.Point(31, 109);
             this.txtDescricaoProduto.Name = "txtDescricaoProduto";
-            this.txtDescricaoProduto.Size = new System.Drawing.Size(325, 20);
+            this.txtDescricaoProduto.Size = new System.Drawing.Size(339, 20);
             this.txtDescricaoProduto.TabIndex = 41;
             // 
-            // lblNome
+            // lblNomeProduto
             // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.BackColor = System.Drawing.Color.Transparent;
-            this.lblNome.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblNome.Location = new System.Drawing.Point(32, 50);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(35, 13);
-            this.lblNome.TabIndex = 44;
-            this.lblNome.Text = "Nome";
+            this.lblNomeProduto.AutoSize = true;
+            this.lblNomeProduto.BackColor = System.Drawing.Color.Transparent;
+            this.lblNomeProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeProduto.ForeColor = System.Drawing.Color.Black;
+            this.lblNomeProduto.Location = new System.Drawing.Point(28, 30);
+            this.lblNomeProduto.Name = "lblNomeProduto";
+            this.lblNomeProduto.Size = new System.Drawing.Size(49, 18);
+            this.lblNomeProduto.TabIndex = 44;
+            this.lblNomeProduto.Text = "Nome";
             // 
             // lblEstoque
             // 
             this.lblEstoque.AutoSize = true;
             this.lblEstoque.BackColor = System.Drawing.Color.Transparent;
-            this.lblEstoque.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblEstoque.Location = new System.Drawing.Point(210, 50);
+            this.lblEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstoque.ForeColor = System.Drawing.Color.Black;
+            this.lblEstoque.Location = new System.Drawing.Point(209, 30);
             this.lblEstoque.Name = "lblEstoque";
-            this.lblEstoque.Size = new System.Drawing.Size(118, 13);
+            this.lblEstoque.Size = new System.Drawing.Size(161, 18);
             this.lblEstoque.TabIndex = 46;
             this.lblEstoque.Text = "Quantidade no estoque";
             // 
-            // txtQntdEstoque
+            // txtQntdEstoqueProduto
             // 
-            this.txtQntdEstoque.BackColor = System.Drawing.SystemColors.Window;
-            this.txtQntdEstoque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtQntdEstoque.Location = new System.Drawing.Point(213, 66);
-            this.txtQntdEstoque.Name = "txtQntdEstoque";
-            this.txtQntdEstoque.Size = new System.Drawing.Size(147, 20);
-            this.txtQntdEstoque.TabIndex = 45;
+            this.txtQntdEstoqueProduto.BackColor = System.Drawing.SystemColors.Window;
+            this.txtQntdEstoqueProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQntdEstoqueProduto.Location = new System.Drawing.Point(209, 52);
+            this.txtQntdEstoqueProduto.Name = "txtQntdEstoqueProduto";
+            this.txtQntdEstoqueProduto.Size = new System.Drawing.Size(161, 20);
+            this.txtQntdEstoqueProduto.TabIndex = 45;
             // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.BackColor = System.Drawing.Color.Transparent;
-            this.lblCategoria.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblCategoria.Location = new System.Drawing.Point(32, 157);
+            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.ForeColor = System.Drawing.Color.Black;
+            this.lblCategoria.Location = new System.Drawing.Point(28, 146);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(55, 13);
+            this.lblCategoria.Size = new System.Drawing.Size(76, 18);
             this.lblCategoria.TabIndex = 47;
             this.lblCategoria.Text = "Categoria:";
             // 
             // chMantimentos
             // 
             this.chMantimentos.AutoSize = true;
-            this.chMantimentos.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.chMantimentos.Location = new System.Drawing.Point(35, 188);
+            this.chMantimentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chMantimentos.Location = new System.Drawing.Point(31, 209);
             this.chMantimentos.Name = "chMantimentos";
-            this.chMantimentos.Size = new System.Drawing.Size(86, 17);
+            this.chMantimentos.Size = new System.Drawing.Size(120, 24);
             this.chMantimentos.TabIndex = 48;
             this.chMantimentos.Text = "Mantimentos";
-            this.chMantimentos.UseVisualStyleBackColor = false;
+            this.chMantimentos.UseVisualStyleBackColor = true;
             // 
             // chSuplementos
             // 
             this.chSuplementos.AutoSize = true;
-            this.chSuplementos.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.chSuplementos.Location = new System.Drawing.Point(35, 220);
+            this.chSuplementos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chSuplementos.Location = new System.Drawing.Point(31, 179);
             this.chSuplementos.Name = "chSuplementos";
-            this.chSuplementos.Size = new System.Drawing.Size(87, 17);
+            this.chSuplementos.Size = new System.Drawing.Size(122, 24);
             this.chSuplementos.TabIndex = 49;
             this.chSuplementos.Text = "Suplementos";
-            this.chSuplementos.UseVisualStyleBackColor = false;
+            this.chSuplementos.UseVisualStyleBackColor = true;
             // 
             // chAcessorios
             // 
             this.chAcessorios.AutoSize = true;
-            this.chAcessorios.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.chAcessorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chAcessorios.Location = new System.Drawing.Point(35, 252);
+            this.chAcessorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chAcessorios.Location = new System.Drawing.Point(31, 236);
             this.chAcessorios.Name = "chAcessorios";
-            this.chAcessorios.Size = new System.Drawing.Size(85, 19);
+            this.chAcessorios.Size = new System.Drawing.Size(106, 24);
             this.chAcessorios.TabIndex = 50;
             this.chAcessorios.Text = "Acessórios";
-            this.chAcessorios.UseVisualStyleBackColor = false;
+            this.chAcessorios.UseVisualStyleBackColor = true;
             // 
             // txtNomeProduto
             // 
             this.txtNomeProduto.BackColor = System.Drawing.SystemColors.Window;
             this.txtNomeProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNomeProduto.Location = new System.Drawing.Point(35, 66);
+            this.txtNomeProduto.Location = new System.Drawing.Point(31, 52);
             this.txtNomeProduto.Name = "txtNomeProduto";
             this.txtNomeProduto.Size = new System.Drawing.Size(172, 20);
             this.txtNomeProduto.TabIndex = 51;
@@ -157,54 +160,58 @@ namespace WinFormsPresentationLayer
             this.btnEditar.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(284, 288);
+            this.btnEditar.Location = new System.Drawing.Point(294, 274);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(76, 34);
             this.btnEditar.TabIndex = 57;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
             this.btnExcluir.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Location = new System.Drawing.Point(213, 288);
+            this.btnExcluir.Location = new System.Drawing.Point(213, 274);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(65, 34);
+            this.btnExcluir.Size = new System.Drawing.Size(75, 34);
             this.btnExcluir.TabIndex = 56;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAtualizar
             // 
             this.btnAtualizar.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtualizar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtualizar.Location = new System.Drawing.Point(126, 288);
+            this.btnAtualizar.Location = new System.Drawing.Point(126, 274);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(81, 34);
             this.btnAtualizar.TabIndex = 55;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = false;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // btnCadastrar
             // 
             this.btnCadastrar.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.Location = new System.Drawing.Point(31, 288);
+            this.btnCadastrar.Location = new System.Drawing.Point(31, 274);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(89, 34);
             this.btnCadastrar.TabIndex = 54;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // dgvCadastroProdutos
             // 
             this.dgvCadastroProdutos.BackgroundColor = System.Drawing.Color.LightSlateGray;
             this.dgvCadastroProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCadastroProdutos.Location = new System.Drawing.Point(389, 66);
+            this.dgvCadastroProdutos.Location = new System.Drawing.Point(389, 52);
             this.dgvCadastroProdutos.Name = "dgvCadastroProdutos";
             this.dgvCadastroProdutos.Size = new System.Drawing.Size(240, 256);
             this.dgvCadastroProdutos.TabIndex = 58;
@@ -213,7 +220,6 @@ namespace WinFormsPresentationLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(670, 359);
             this.Controls.Add(this.dgvCadastroProdutos);
             this.Controls.Add(this.btnEditar);
@@ -226,10 +232,10 @@ namespace WinFormsPresentationLayer
             this.Controls.Add(this.chMantimentos);
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.lblEstoque);
-            this.Controls.Add(this.txtQntdEstoque);
-            this.Controls.Add(this.lblDescricao);
+            this.Controls.Add(this.txtQntdEstoqueProduto);
+            this.Controls.Add(this.lblDescricaoProduto);
             this.Controls.Add(this.txtDescricaoProduto);
-            this.Controls.Add(this.lblNome);
+            this.Controls.Add(this.lblNomeProduto);
             this.Name = "FormCadastroDeProdutos";
             this.Text = "Cadastrar Produtos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadastroProdutos)).EndInit();
@@ -240,11 +246,11 @@ namespace WinFormsPresentationLayer
 
         #endregion
 
-        private System.Windows.Forms.Label lblDescricao;
+        private System.Windows.Forms.Label lblDescricaoProduto;
         private System.Windows.Forms.TextBox txtDescricaoProduto;
-        private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.Label lblNomeProduto;
         private System.Windows.Forms.Label lblEstoque;
-        private System.Windows.Forms.TextBox txtQntdEstoque;
+        private System.Windows.Forms.TextBox txtQntdEstoqueProduto;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.CheckBox chMantimentos;
         private System.Windows.Forms.CheckBox chSuplementos;

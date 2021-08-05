@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entites
+namespace Entities.DTO
 {
-    public class Clientes
+    public class ClienteDTO
     {
-        public int ID { get; set; }
         public string Nome { get; set; }
         public string CPF { get; set; }
         public string RG { get; set; }
@@ -17,8 +16,7 @@ namespace Entites
         public string Email { get; set; }
         public DateTime DataNascimento { get; set; }
         public DateTime DataMatricula { get; set; }
-        public bool Ativo { get; set; }
-        public Usuarios Usuarios { get; set; }
         public string Genero { get; set; }
+        public bool Ativo { get; set; }
     }
 }

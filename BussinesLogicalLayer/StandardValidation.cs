@@ -12,6 +12,51 @@ namespace BussinesLogicalLayer
 {
     public class StandardValidation
     {
+        private const double SALARIO_MINIMO = 1100;
+
+        public bool ValidationsComissao(string comissao)
+        {
+            return true;
+        }
+        public bool ValidationsSalario(string salario)
+        {
+            if ((!string.IsNullOrWhiteSpace(salario)) && 
+                (ValidationNumero(salario)))
+            {
+                double salarioDouble = Convert.ToDouble(salario);
+
+                if ((salarioDouble < SALARIO_MINIMO))
+                {
+                    return false;
+                }
+                return true;
+            } 
+            return false;
+        }
+        public bool ValidationsCidade(string cidade)
+        {
+            if ((string.IsNullOrWhiteSpace(cidade))
+                || (!ValidationsComprimento(cidade, 3, 40)))
+            {
+                return false;
+            }
+            return true;
+        }
+        public bool ValidationsSenha(string senha)
+        {
+            if ((string.IsNullOrWhiteSpace(senha))
+                || (!ValidationsComprimento(senha, 5, 20)))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool ValidationsPapel(string papel)
+        {
+            return true;
+        }
+
         public bool ValidationNumero(string value)
         {
             List<string> listaValue = new List<string>();
@@ -150,8 +195,8 @@ namespace BussinesLogicalLayer
 
         public bool ValidationsTelefone(string telefone)
         {
-    telefone = telefone.Replace(" ", "").Replace("(", "").Replace(")", "").Replace("-", "");
-            if ((string.IsNullOrWhiteSpace(telefone)) || (!ValidationsComprimento(telefone, 11, 11)
+            telefone = telefone.Replace(" ", "").Replace("(", "").Replace(")", "").Replace("-", "");
+            if ((string.IsNullOrWhiteSpace(telefone)) || (!ValidationsComprimento(telefone, 10, 11)
                 || (!ValidationNumero(telefone))))
             {
                 return false;
@@ -183,10 +228,10 @@ namespace BussinesLogicalLayer
             return true;
         }
 
-        public bool ValidationsData(String data)
+        public bool VerificaDataMaiorQueAtual(string data)
         {
             string dataAtualString = DateTime.Now.ToString();
-            
+
             int anoRecebido = Convert.ToInt32(data.Substring(6, 4));
             int mesRecebido = Convert.ToInt32(data.Substring(3, 2));
             int diaRecebido = Convert.ToInt32(data.Substring(0, 2));
@@ -195,11 +240,45 @@ namespace BussinesLogicalLayer
             int mesAtual = Convert.ToInt32(dataAtualString.Substring(3, 2));
             int diaAtual = Convert.ToInt32(dataAtualString.Substring(0, 2));
 
+            DateTime dataAtual = new DateTime(anoAtual, mesAtual, diaAtual);
             DateTime dataRecebida = new DateTime(anoRecebido, mesRecebido, diaRecebido);
 
-            int diferenca = (int) dataRecebida.Subtract(DateTime.Today).TotalDays;
+            if ((dataRecebida > dataAtual))
+            {
+                return false;
+            }
+            return true;
+        }
 
-            if (diferenca > 4380)
+        public bool ValidationsDataMatricula(string dataMatricula)
+        {
+            return VerificaDataMaiorQueAtual(dataMatricula);
+        }
+
+        public bool ValidationsDataNascimento(String dataNasciemtno)
+        {
+            string dataAtualString = DateTime.Now.ToString();
+            
+            int anoRecebido = Convert.ToInt32(dataNasciemtno.Substring(6, 4));
+            int mesRecebido = Convert.ToInt32(dataNasciemtno.Substring(3, 2));
+            int diaRecebido = Convert.ToInt32(dataNasciemtno.Substring(0, 2));
+
+            int anoAtual = Convert.ToInt32(dataAtualString.Substring(6, 4));
+            int mesAtual = Convert.ToInt32(dataAtualString.Substring(3, 2));
+            int diaAtual = Convert.ToInt32(dataAtualString.Substring(0, 2));
+
+            DateTime dataAtual = new DateTime(anoAtual, mesAtual, diaAtual);
+            DateTime dataRecebida = new DateTime(anoRecebido, mesRecebido, diaRecebido);
+
+            if ((dataRecebida > dataAtual))
+            {
+                return false;
+            }
+
+            TimeSpan diferenca = dataAtual.Subtract(dataRecebida);
+            int dias = diferenca.Days;
+
+            if (dias > 4380)
             {
                 return true;
             }
@@ -226,22 +305,23 @@ namespace BussinesLogicalLayer
             return ValidationsComprimento(rua, 3, 100);
         }
 
-        public string ValidationsComplementoNumero(string complemento, string numeroCasa)
+        public bool ValidationsComplementoNumero(string complemento, string numeroCasa)
         {
-            if (string.IsNullOrWhiteSpace(numeroCasa) && string.IsNullOrWhiteSpace(complemento))
+            if ((string.IsNullOrWhiteSpace(numeroCasa)) || 
+                (string.IsNullOrWhiteSpace(complemento)) ||
+                (!ValidationNumero(numeroCasa)))
             {
-                return "Complemento obrigatório caso não tenha numero da casa.\r\n";
+                return false;
             }
             if (complemento?.Length > 30)
             {
-                return "Complemento não pode conter mais de 30 caracteres.\r\n";
+                return false;
             }
-            if (numeroCasa?.Length > 10)
+            if (numeroCasa?.Length > 6)
             {
-                return "Número da casa não pode conter mais de 6 caracteres.\r\n";
+                return false;
             }
-
-            return "";
+            return true;
         }
 
         public bool ValidationsGenero(string genero)

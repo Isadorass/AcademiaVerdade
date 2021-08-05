@@ -5,7 +5,6 @@ C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\obj\Debug\WinForm
 C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\obj\Debug\WinFormsPresentationLayer.FormCadastroDeModalidades.resources
 C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\obj\Debug\WinFormsPresentationLayer.FormCadastroDeProdutos.resources
 C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\obj\Debug\WinFormsPresentationLayer.FormCadastroDeProfessores.resources
-C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\obj\Debug\WinFormsPresentationLayer.FormLogin.resources
 C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\obj\Debug\WinFormPresetaionLayer.Properties.Resources.resources
 C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\obj\Debug\WinFormPresentationLayer.csproj.GenerateResource.cache
 C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\obj\Debug\WinFormPresentationLayer.csproj.CoreCompileInputs.cache
@@ -21,3 +20,6 @@ C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\bin\Debug\DataAcc
 C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\bin\Debug\Shared.pdb
 C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\obj\Debug\WinFormPresentationLayer.csproj.CopyComplete
 C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\obj\Debug\WinFormPresetaionLayer.Form1.resources
+C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\obj\Debug\WinFormsPresentationLayer.FormCadastroDePlanos.resources
+C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\obj\Debug\WinFormsPresentationLayer.FormMenu.resources
+C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\obj\Debug\WinFormsPresentationLayer.FormUsuarios.resources

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BussinesLogicalLayer
 {
-    class PlanosBLL : StandartBase<Planos>, IPlanosService
+    public class PlanosBLL : StandartBase<Planos>, IPlanosService
     {
         private PlanosDAL planosDAL = new PlanosDAL();
 

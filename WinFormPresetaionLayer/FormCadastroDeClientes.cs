@@ -1,5 +1,7 @@
 ﻿using BussinesLogicalLayer;
 using Entites;
+using Entities.DTO;
+using Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +24,14 @@ namespace WinFormsPresentationLayer
         {
             InitializeComponent();
             backgroundBtn();
-            borderTxt();
+            toolTipBtnAtualizarGrid();
+            colorirPanel();
+        }
+
+        private void colorirPanel()
+        {
+            Color colorPanel = Color.FromArgb(26, 175, 235);
+            panelFundoMensagem.BackColor = colorPanel;
         }
 
         private void backgroundBtn()
@@ -34,14 +43,14 @@ namespace WinFormsPresentationLayer
             btnEditar.BackColor = colorBtn;
         }
 
-        private void borderTxt()
+        private void toolTipBtnAtualizarGrid()
         {
-            
+            ToolTip toolTip1 = new ToolTip();
+            toolTip1.SetToolTip(this.btnAtualizar, "Atualizar Tabela");
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            
             bool nome, cpf, rg, telefoneCelular, telefoneFixo, email, dataNascimento,
                 dataMatricula, usuario, genero;
 
@@ -92,8 +101,9 @@ namespace WinFormsPresentationLayer
             if (standardValidation.ValidationsTelefone(txtTelefoneFixo.Text))
             {
                 lblTelefoneFixo.ForeColor = Color.Black;
-                telefoneFixo = true;
+                telefoneFixo = true; 
             }
+
             else
             {
                 lblTelefoneFixo.ForeColor = Color.Red;
@@ -112,7 +122,7 @@ namespace WinFormsPresentationLayer
                 email = false;
             }
 
-            if (standardValidation.ValidationsData(dtpDataNascimento.Text))
+            if (standardValidation.ValidationsDataNascimento(dtpDataNascimento.Text))
             {
                 lblDataNascimento.ForeColor = Color.Black;
                 dataNascimento = true;
@@ -123,7 +133,7 @@ namespace WinFormsPresentationLayer
                 dataNascimento = false;
             }
 
-            if (standardValidation.ValidationsData(dtpDataMatricula.Text))
+            if (standardValidation.ValidationsDataMatricula(dtpDataMatricula.Text))
             {
                 lblDataMatricula.ForeColor = Color.Black;
                 dataMatricula = true;
@@ -138,8 +148,8 @@ namespace WinFormsPresentationLayer
             {
                 lblGenero.ForeColor = Color.Black;
                 genero = true;
-            } 
-            else 
+            }
+            else
             {
                 lblGenero.ForeColor = Color.Red;
                 genero = false;
@@ -149,7 +159,7 @@ namespace WinFormsPresentationLayer
             {
                 usuario = true;
                 lblMensagem.Text = "Preencha todos os campos corretamente para cadastrar o cliente";
-            } 
+            }
             else
             {
                 usuario = false;
@@ -157,27 +167,91 @@ namespace WinFormsPresentationLayer
                     "\rCadastre o cliente com o mesmo email do usuário.";
             }
 
-            if (nome && cpf && rg && telefoneCelular 
+            if (nome && cpf && rg && telefoneCelular
                 && telefoneFixo
-                && email && dataMatricula 
+                && email && dataMatricula
                 && dataNascimento && usuario
                 && genero)
             {
                 Clientes cliente = new Clientes();
+                Usuarios usuarioObj = new Usuarios();
 
                 cliente.Nome = txtNome.Text;
-                cliente.CPF = Convert.ToInt32(txtCPF.Text);
-                cliente.RG = Convert.ToInt32(txtRG.Text);
-                cliente.TelefoneCelualar = Convert.ToInt32(txtTelefoneCelular.Text);
-                cliente.TelefoneFixo = Convert.ToInt32(txtTelefoneFixo.Text);
+                cliente.CPF = (txtCPF.Text);
+                cliente.RG = (txtRG.Text);
+                cliente.TelefoneCelular = (txtTelefoneCelular.Text);
+                cliente.TelefoneFixo = (txtTelefoneFixo.Text);
                 cliente.Email = txtEmail.Text;
                 cliente.DataNascimento = Convert.ToDateTime(dtpDataNascimento.Text);
                 cliente.DataMatricula = Convert.ToDateTime(dtpDataMatricula.Text);
                 cliente.Ativo = true;
-                cliente.Usuarios.ID = clientesBLL.SearchClienteInUsuario(txtEmail.Text);
+                usuarioObj.ID = clientesBLL.SearchClienteInUsuario(txtEmail.Text);
+                cliente.Usuarios = usuarioObj; 
                 cliente.Genero = cmbGenero.Text;
 
                 clientesBLL.Insert(cliente);
+            }
+        }
+
+        private void AtualizarGrid()
+        {
+            DataResponse<Clientes> response = clientesBLL.GetAll();
+            List<ClienteDTO> listaClienteDTO = new List<ClienteDTO>();
+
+            foreach(Clientes cliente in response.Data)
+            {
+                ClienteDTO clienteDTO = new ClienteDTO();
+
+                clienteDTO.Nome = cliente.Nome;
+                clienteDTO.CPF = cliente.CPF;
+                clienteDTO.RG = cliente.RG;
+                clienteDTO.TelefoneCelular = cliente.TelefoneCelular;
+                clienteDTO.TelefoneFixo = cliente.TelefoneFixo;
+                clienteDTO.Email = cliente.Email;
+                clienteDTO.DataNascimento = cliente.DataNascimento;
+                clienteDTO.DataMatricula = cliente.DataMatricula;
+                clienteDTO.Genero = cliente.Genero;
+                clienteDTO.Ativo = cliente.Ativo;
+
+                listaClienteDTO.Add(clienteDTO);
+            }
+
+            if (response.Success)
+            {
+                this.dgvCadastroClientes.DataSource = listaClienteDTO;
+            }
+            else
+            {
+                MessageBox.Show(response.Message);
+            }
+        }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            AtualizarGrid();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            Response r = clientesBLL.Delete(int.Parse(txtCPF.Text));
+            MessageBox.Show(r.Message);
+            if (r.Success)
+            {
+                this.Close();
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Response r = clientesBLL.Update(new Clientes()
+            {
+                ID = int.Parse(txtCPF.Text),
+                Nome = txtCPF.Text
+            });
+            MessageBox.Show(r.Message);
+            if (r.Success)
+            {
+                this.Close();
             }
         }
     }

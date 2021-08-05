@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BussinesLogicalLayer
 {
-    class UsuariosBLL : StandartBase<Usuarios>, IUsuariosService
+    public class UsuariosBLL : StandartBase<Usuarios>, IUsuariosService
     {
         private UsuariosDAL usuariosDAL = new UsuariosDAL();
 

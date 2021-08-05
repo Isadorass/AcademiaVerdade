@@ -30,15 +30,15 @@ namespace WinFormsPresentationLayer
         private void InitializeComponent()
         {
             this.txtNomeModalidade = new System.Windows.Forms.TextBox();
-            this.lblDescricao = new System.Windows.Forms.Label();
+            this.lblDescricaoModalidade = new System.Windows.Forms.Label();
             this.txtDescricaoModalidade = new System.Windows.Forms.TextBox();
-            this.lblNome = new System.Windows.Forms.Label();
-            this.dgvCadastroProdutos = new System.Windows.Forms.DataGridView();
+            this.lblNomeModalidade = new System.Windows.Forms.Label();
+            this.dgvCadastroModalidades = new System.Windows.Forms.DataGridView();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCadastroProdutos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCadastroModalidades)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNomeModalidade
@@ -50,16 +50,17 @@ namespace WinFormsPresentationLayer
             this.txtNomeModalidade.Size = new System.Drawing.Size(204, 20);
             this.txtNomeModalidade.TabIndex = 55;
             // 
-            // lblDescricao
+            // lblDescricaoModalidade
             // 
-            this.lblDescricao.AutoSize = true;
-            this.lblDescricao.BackColor = System.Drawing.Color.Transparent;
-            this.lblDescricao.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblDescricao.Location = new System.Drawing.Point(234, 38);
-            this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(127, 13);
-            this.lblDescricao.TabIndex = 53;
-            this.lblDescricao.Text = "Descrição da modalidade";
+            this.lblDescricaoModalidade.AutoSize = true;
+            this.lblDescricaoModalidade.BackColor = System.Drawing.Color.Transparent;
+            this.lblDescricaoModalidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescricaoModalidade.ForeColor = System.Drawing.Color.Black;
+            this.lblDescricaoModalidade.Location = new System.Drawing.Point(234, 33);
+            this.lblDescricaoModalidade.Name = "lblDescricaoModalidade";
+            this.lblDescricaoModalidade.Size = new System.Drawing.Size(176, 18);
+            this.lblDescricaoModalidade.TabIndex = 53;
+            this.lblDescricaoModalidade.Text = "Descrição da modalidade";
             // 
             // txtDescricaoModalidade
             // 
@@ -70,25 +71,26 @@ namespace WinFormsPresentationLayer
             this.txtDescricaoModalidade.Size = new System.Drawing.Size(204, 20);
             this.txtDescricaoModalidade.TabIndex = 52;
             // 
-            // lblNome
+            // lblNomeModalidade
             // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.BackColor = System.Drawing.Color.Transparent;
-            this.lblNome.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblNome.Location = new System.Drawing.Point(24, 38);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(107, 13);
-            this.lblNome.TabIndex = 54;
-            this.lblNome.Text = "Nome da modalidade";
+            this.lblNomeModalidade.AutoSize = true;
+            this.lblNomeModalidade.BackColor = System.Drawing.Color.Transparent;
+            this.lblNomeModalidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeModalidade.ForeColor = System.Drawing.Color.Black;
+            this.lblNomeModalidade.Location = new System.Drawing.Point(24, 33);
+            this.lblNomeModalidade.Name = "lblNomeModalidade";
+            this.lblNomeModalidade.Size = new System.Drawing.Size(149, 18);
+            this.lblNomeModalidade.TabIndex = 54;
+            this.lblNomeModalidade.Text = "Nome da modalidade";
             // 
-            // dgvCadastroProdutos
+            // dgvCadastroModalidades
             // 
-            this.dgvCadastroProdutos.BackgroundColor = System.Drawing.Color.LightSlateGray;
-            this.dgvCadastroProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCadastroProdutos.Location = new System.Drawing.Point(27, 90);
-            this.dgvCadastroProdutos.Name = "dgvCadastroProdutos";
-            this.dgvCadastroProdutos.Size = new System.Drawing.Size(414, 196);
-            this.dgvCadastroProdutos.TabIndex = 59;
+            this.dgvCadastroModalidades.BackgroundColor = System.Drawing.Color.LightSlateGray;
+            this.dgvCadastroModalidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCadastroModalidades.Location = new System.Drawing.Point(27, 90);
+            this.dgvCadastroModalidades.Name = "dgvCadastroModalidades";
+            this.dgvCadastroModalidades.Size = new System.Drawing.Size(414, 196);
+            this.dgvCadastroModalidades.TabIndex = 59;
             // 
             // btnEditar
             // 
@@ -101,6 +103,7 @@ namespace WinFormsPresentationLayer
             this.btnEditar.TabIndex = 63;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
@@ -113,6 +116,7 @@ namespace WinFormsPresentationLayer
             this.btnExcluir.TabIndex = 62;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAtualizar
             // 
@@ -125,6 +129,7 @@ namespace WinFormsPresentationLayer
             this.btnAtualizar.TabIndex = 61;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = false;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // btnCadastrar
             // 
@@ -137,25 +142,25 @@ namespace WinFormsPresentationLayer
             this.btnCadastrar.TabIndex = 60;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // FormCadastroDeModalidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(479, 359);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.dgvCadastroProdutos);
+            this.Controls.Add(this.dgvCadastroModalidades);
             this.Controls.Add(this.txtNomeModalidade);
-            this.Controls.Add(this.lblDescricao);
+            this.Controls.Add(this.lblDescricaoModalidade);
             this.Controls.Add(this.txtDescricaoModalidade);
-            this.Controls.Add(this.lblNome);
+            this.Controls.Add(this.lblNomeModalidade);
             this.Name = "FormCadastroDeModalidades";
             this.Text = "Cadastrar Modalidades";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCadastroProdutos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCadastroModalidades)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,10 +169,10 @@ namespace WinFormsPresentationLayer
         #endregion
 
         private System.Windows.Forms.TextBox txtNomeModalidade;
-        private System.Windows.Forms.Label lblDescricao;
+        private System.Windows.Forms.Label lblDescricaoModalidade;
         private System.Windows.Forms.TextBox txtDescricaoModalidade;
-        private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.DataGridView dgvCadastroProdutos;
+        private System.Windows.Forms.Label lblNomeModalidade;
+        private System.Windows.Forms.DataGridView dgvCadastroModalidades;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAtualizar;
