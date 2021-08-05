@@ -15,9 +15,9 @@ namespace BussinesLogicalLayer
         private ClientesDAL clientesDAL = new ClientesDAL();
 
 
-        public Response Delete(int id)
+        public Response Delete(string cpf)
         {
-            return clientesDAL.Delete(id);
+            return clientesDAL.Delete(cpf);
         }
 
         public DataResponse<Clientes> GetAll()

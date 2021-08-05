@@ -11,7 +11,7 @@ namespace Entites.Interfaces
     {
         Response Insert(Clientes c);
         Response Update(Clientes c);
-        Response Delete(int id);
+        Response Delete(string id);
         DataResponse<Clientes> GetAll();
     }
 }

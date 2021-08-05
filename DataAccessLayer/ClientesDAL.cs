@@ -13,7 +13,7 @@ namespace DataAccessLayer
 {
     public class ClientesDAL : IClientesService
     {
-        public Response Delete(int cpf)
+        public Response Delete(string cpf)
         {
             string connectionString = SqlUtils.CONNECTION_STRING;
             SqlConnection connection = new SqlConnection();
@@ -167,11 +167,12 @@ namespace DataAccessLayer
             command.Connection = connection;
             command.CommandText = "UPDATE CLIENTES SET NOME = @NOME," +
                 "CPF = @CPF, RG = @RG, TELEFONE_CELULAR = @TELEFONE_CELULAR," +
-                "TELEFONE_FIXO = @TELEFOE_FIXO," +
+                "TELEFONE_FIXO = @TELEFONE_FIXO," +
                 "EMAIL = @EMAIL, DATA_NASCIMENTO = @DATA_NASCIMENTO," +
-                "DATA_MATRICULA = @DATA_MATRICULA, ATIVO = @ATIVO WHERE CPF = @CPF";
+                "DATA_MATRICULA = @DATA_MATRICULA, ATIVO = @ATIVO, USUARIO = @USUARIO," +
+                "GENERO = @GENERO WHERE CPF = @CPF";
+
             command.Parameters.AddWithValue("@NOME", c.Nome);
-            command.Parameters.AddWithValue("@ID", c.ID);
             command.Parameters.AddWithValue("@CPF", c.CPF);
             command.Parameters.AddWithValue("@RG", c.RG);
             command.Parameters.AddWithValue("@TELEFONE_CELULAR", c.TelefoneCelular);
@@ -180,8 +181,8 @@ namespace DataAccessLayer
             command.Parameters.AddWithValue("@DATA_NASCIMENTO", c.DataNascimento);
             command.Parameters.AddWithValue("@DATA_MATRICULA", c.DataMatricula);
             command.Parameters.AddWithValue("@ATIVO", c.Ativo);
-
-
+            command.Parameters.AddWithValue("@USUARIO", c.Usuarios.ID);
+            command.Parameters.AddWithValue("@GENERO", c.Genero);
 
             Response resposta = new Response();
             try
