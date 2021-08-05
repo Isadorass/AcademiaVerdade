@@ -28,5 +28,7 @@ namespace WinFormsPresentationLayer
             FormCadastroDeClientes formCadastroDeClientes = new FormCadastroDeClientes();
             formCadastroDeClientes.Visible = true;
         }
+
+       
     }
 }

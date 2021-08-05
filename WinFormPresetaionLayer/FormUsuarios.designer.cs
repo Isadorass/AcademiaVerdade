@@ -58,7 +58,7 @@ namespace WinFormsPresentationLayer
             // 
             this.txtNome.BackColor = System.Drawing.SystemColors.Window;
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNome.Location = new System.Drawing.Point(23, 37);
+            this.txtNome.Location = new System.Drawing.Point(24, 37);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(190, 20);
             this.txtNome.TabIndex = 60;
@@ -134,6 +134,7 @@ namespace WinFormsPresentationLayer
             this.btnEditar.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
             this.btnEditar.Location = new System.Drawing.Point(366, 337);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(111, 34);
@@ -147,6 +148,7 @@ namespace WinFormsPresentationLayer
             this.btnExcluir.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.ForeColor = System.Drawing.Color.White;
             this.btnExcluir.Location = new System.Drawing.Point(260, 337);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(100, 34);
@@ -160,6 +162,7 @@ namespace WinFormsPresentationLayer
             this.btnAtualizar.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtualizar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtualizar.ForeColor = System.Drawing.Color.White;
             this.btnAtualizar.Location = new System.Drawing.Point(156, 337);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(100, 34);
@@ -173,6 +176,7 @@ namespace WinFormsPresentationLayer
             this.btnCadastrar.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.ForeColor = System.Drawing.Color.White;
             this.btnCadastrar.Location = new System.Drawing.Point(23, 337);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(127, 34);

@@ -117,8 +117,10 @@ namespace WinFormsPresentationLayer
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnEditar.Location = new System.Drawing.Point(348, 347);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(95, 34);
@@ -130,8 +132,10 @@ namespace WinFormsPresentationLayer
             // btnExcluir
             // 
             this.btnExcluir.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnExcluir.Location = new System.Drawing.Point(249, 347);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(93, 34);
@@ -143,11 +147,13 @@ namespace WinFormsPresentationLayer
             // btnAtualizar
             // 
             this.btnAtualizar.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnAtualizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtualizar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtualizar.Location = new System.Drawing.Point(141, 347);
+            this.btnAtualizar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAtualizar.Location = new System.Drawing.Point(140, 347);
             this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(102, 34);
+            this.btnAtualizar.Size = new System.Drawing.Size(93, 34);
             this.btnAtualizar.TabIndex = 66;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = false;
@@ -156,11 +162,13 @@ namespace WinFormsPresentationLayer
             // btnCadastrar
             // 
             this.btnCadastrar.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCadastrar.Location = new System.Drawing.Point(30, 347);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(105, 34);
+            this.btnCadastrar.Size = new System.Drawing.Size(93, 34);
             this.btnCadastrar.TabIndex = 65;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
@@ -178,6 +186,11 @@ namespace WinFormsPresentationLayer
             // cmbModalidade
             // 
             this.cmbModalidade.FormattingEnabled = true;
+            this.cmbModalidade.Items.AddRange(new object[] {
+            "Natação",
+            "Pilates",
+            "Musculação",
+            "Zumba"});
             this.cmbModalidade.Location = new System.Drawing.Point(30, 47);
             this.cmbModalidade.Name = "cmbModalidade";
             this.cmbModalidade.Size = new System.Drawing.Size(213, 21);

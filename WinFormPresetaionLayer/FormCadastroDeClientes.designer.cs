@@ -261,9 +261,9 @@ namespace WinFormsPresentationLayer
             this.btnAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtualizar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtualizar.ForeColor = System.Drawing.Color.White;
-            this.btnAtualizar.Location = new System.Drawing.Point(712, 98);
+            this.btnAtualizar.Location = new System.Drawing.Point(731, 98);
             this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(61, 21);
+            this.btnAtualizar.Size = new System.Drawing.Size(42, 21);
             this.btnAtualizar.TabIndex = 51;
             this.btnAtualizar.Tag = "Atualizar Tabela";
             this.btnAtualizar.Text = "º";

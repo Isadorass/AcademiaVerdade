@@ -45,9 +45,9 @@ namespace WinFormsPresentationLayer
             // 
             this.txtNomeModalidade.BackColor = System.Drawing.SystemColors.Window;
             this.txtNomeModalidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNomeModalidade.Location = new System.Drawing.Point(27, 54);
+            this.txtNomeModalidade.Location = new System.Drawing.Point(27, 41);
             this.txtNomeModalidade.Name = "txtNomeModalidade";
-            this.txtNomeModalidade.Size = new System.Drawing.Size(204, 20);
+            this.txtNomeModalidade.Size = new System.Drawing.Size(190, 20);
             this.txtNomeModalidade.TabIndex = 55;
             // 
             // lblDescricaoModalidade
@@ -56,17 +56,17 @@ namespace WinFormsPresentationLayer
             this.lblDescricaoModalidade.BackColor = System.Drawing.Color.Transparent;
             this.lblDescricaoModalidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescricaoModalidade.ForeColor = System.Drawing.Color.Black;
-            this.lblDescricaoModalidade.Location = new System.Drawing.Point(234, 33);
+            this.lblDescricaoModalidade.Location = new System.Drawing.Point(234, 20);
             this.lblDescricaoModalidade.Name = "lblDescricaoModalidade";
-            this.lblDescricaoModalidade.Size = new System.Drawing.Size(176, 18);
+            this.lblDescricaoModalidade.Size = new System.Drawing.Size(156, 18);
             this.lblDescricaoModalidade.TabIndex = 53;
-            this.lblDescricaoModalidade.Text = "Descrição da modalidade";
+            this.lblDescricaoModalidade.Text = "Descrição Modalidade";
             // 
             // txtDescricaoModalidade
             // 
             this.txtDescricaoModalidade.BackColor = System.Drawing.SystemColors.Window;
             this.txtDescricaoModalidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDescricaoModalidade.Location = new System.Drawing.Point(237, 54);
+            this.txtDescricaoModalidade.Location = new System.Drawing.Point(237, 41);
             this.txtDescricaoModalidade.Name = "txtDescricaoModalidade";
             this.txtDescricaoModalidade.Size = new System.Drawing.Size(204, 20);
             this.txtDescricaoModalidade.TabIndex = 52;
@@ -77,19 +77,19 @@ namespace WinFormsPresentationLayer
             this.lblNomeModalidade.BackColor = System.Drawing.Color.Transparent;
             this.lblNomeModalidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomeModalidade.ForeColor = System.Drawing.Color.Black;
-            this.lblNomeModalidade.Location = new System.Drawing.Point(24, 33);
+            this.lblNomeModalidade.Location = new System.Drawing.Point(25, 20);
             this.lblNomeModalidade.Name = "lblNomeModalidade";
-            this.lblNomeModalidade.Size = new System.Drawing.Size(149, 18);
+            this.lblNomeModalidade.Size = new System.Drawing.Size(129, 18);
             this.lblNomeModalidade.TabIndex = 54;
-            this.lblNomeModalidade.Text = "Nome da modalidade";
+            this.lblNomeModalidade.Text = "Nome Modalidade";
             // 
             // dgvCadastroModalidades
             // 
             this.dgvCadastroModalidades.BackgroundColor = System.Drawing.Color.LightSlateGray;
             this.dgvCadastroModalidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCadastroModalidades.Location = new System.Drawing.Point(27, 90);
+            this.dgvCadastroModalidades.Location = new System.Drawing.Point(28, 77);
             this.dgvCadastroModalidades.Name = "dgvCadastroModalidades";
-            this.dgvCadastroModalidades.Size = new System.Drawing.Size(414, 196);
+            this.dgvCadastroModalidades.Size = new System.Drawing.Size(413, 209);
             this.dgvCadastroModalidades.TabIndex = 59;
             // 
             // btnEditar
@@ -97,6 +97,7 @@ namespace WinFormsPresentationLayer
             this.btnEditar.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.SystemColors.Control;
             this.btnEditar.Location = new System.Drawing.Point(346, 301);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(95, 34);
@@ -110,6 +111,7 @@ namespace WinFormsPresentationLayer
             this.btnExcluir.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.ForeColor = System.Drawing.SystemColors.Control;
             this.btnExcluir.Location = new System.Drawing.Point(247, 301);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(93, 34);
@@ -123,6 +125,7 @@ namespace WinFormsPresentationLayer
             this.btnAtualizar.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtualizar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtualizar.ForeColor = System.Drawing.SystemColors.Control;
             this.btnAtualizar.Location = new System.Drawing.Point(139, 301);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(102, 34);
@@ -136,6 +139,7 @@ namespace WinFormsPresentationLayer
             this.btnCadastrar.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.ForeColor = System.Drawing.SystemColors.Control;
             this.btnCadastrar.Location = new System.Drawing.Point(28, 301);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(105, 34);

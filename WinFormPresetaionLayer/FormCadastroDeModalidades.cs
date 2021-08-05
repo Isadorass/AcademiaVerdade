@@ -21,6 +21,16 @@ namespace WinFormsPresentationLayer
         public FormCadastroDeModalidades()
         {
             InitializeComponent();
+            backgroundBtn();
+        }
+
+        private void backgroundBtn()
+        {
+            Color colorBtn = Color.FromArgb(26, 175, 235);
+            btnCadastrar.BackColor = colorBtn;
+            btnAtualizar.BackColor = colorBtn;
+            btnExcluir.BackColor = colorBtn;
+            btnEditar.BackColor = colorBtn;
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
