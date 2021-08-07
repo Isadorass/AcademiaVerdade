@@ -30,7 +30,6 @@ namespace WinFormsPresentationLayer
         private void InitializeComponent()
         {
             this.lblNome = new System.Windows.Forms.Label();
-            this.cmbGenero = new System.Windows.Forms.ComboBox();
             this.txtTelefone = new System.Windows.Forms.TextBox();
             this.lblDataNascimento = new System.Windows.Forms.Label();
             this.lblTelefone = new System.Windows.Forms.Label();
@@ -39,7 +38,6 @@ namespace WinFormsPresentationLayer
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.dtpDataNascimento = new System.Windows.Forms.DateTimePicker();
             this.lblCPF = new System.Windows.Forms.Label();
-            this.lblGenero = new System.Windows.Forms.Label();
             this.txtCPF = new System.Windows.Forms.TextBox();
             this.lblRG = new System.Windows.Forms.Label();
             this.txtRG = new System.Windows.Forms.TextBox();
@@ -77,19 +75,6 @@ namespace WinFormsPresentationLayer
             this.lblNome.Size = new System.Drawing.Size(45, 16);
             this.lblNome.TabIndex = 55;
             this.lblNome.Text = "Nome";
-            // 
-            // cmbGenero
-            // 
-            this.cmbGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbGenero.FormattingEnabled = true;
-            this.cmbGenero.Items.AddRange(new object[] {
-            "Masculino",
-            "Feminino",
-            "Indeterminado(a)"});
-            this.cmbGenero.Location = new System.Drawing.Point(146, 45);
-            this.cmbGenero.Name = "cmbGenero";
-            this.cmbGenero.Size = new System.Drawing.Size(124, 24);
-            this.cmbGenero.TabIndex = 54;
             // 
             // txtTelefone
             // 
@@ -144,7 +129,7 @@ namespace WinFormsPresentationLayer
             // 
             this.txtEmail.Location = new System.Drawing.Point(8, 85);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(262, 22);
+            this.txtEmail.Size = new System.Drawing.Size(132, 22);
             this.txtEmail.TabIndex = 52;
             // 
             // dtpDataNascimento
@@ -160,30 +145,19 @@ namespace WinFormsPresentationLayer
             this.lblCPF.AutoSize = true;
             this.lblCPF.BackColor = System.Drawing.Color.Transparent;
             this.lblCPF.ForeColor = System.Drawing.Color.Black;
-            this.lblCPF.Location = new System.Drawing.Point(273, 30);
+            this.lblCPF.Location = new System.Drawing.Point(146, 29);
             this.lblCPF.Name = "lblCPF";
             this.lblCPF.Size = new System.Drawing.Size(34, 16);
             this.lblCPF.TabIndex = 56;
             this.lblCPF.Text = "CPF";
             // 
-            // lblGenero
-            // 
-            this.lblGenero.AutoSize = true;
-            this.lblGenero.BackColor = System.Drawing.Color.Transparent;
-            this.lblGenero.ForeColor = System.Drawing.Color.Black;
-            this.lblGenero.Location = new System.Drawing.Point(143, 29);
-            this.lblGenero.Name = "lblGenero";
-            this.lblGenero.Size = new System.Drawing.Size(53, 16);
-            this.lblGenero.TabIndex = 61;
-            this.lblGenero.Text = "Gênero";
-            // 
             // txtCPF
             // 
             this.txtCPF.BackColor = System.Drawing.SystemColors.Window;
             this.txtCPF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCPF.Location = new System.Drawing.Point(276, 46);
+            this.txtCPF.Location = new System.Drawing.Point(146, 46);
             this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(203, 22);
+            this.txtCPF.Size = new System.Drawing.Size(333, 22);
             this.txtCPF.TabIndex = 51;
             // 
             // lblRG
@@ -191,7 +165,7 @@ namespace WinFormsPresentationLayer
             this.lblRG.AutoSize = true;
             this.lblRG.BackColor = System.Drawing.Color.Transparent;
             this.lblRG.ForeColor = System.Drawing.Color.Black;
-            this.lblRG.Location = new System.Drawing.Point(277, 68);
+            this.lblRG.Location = new System.Drawing.Point(143, 68);
             this.lblRG.Name = "lblRG";
             this.lblRG.Size = new System.Drawing.Size(28, 16);
             this.lblRG.TabIndex = 67;
@@ -201,9 +175,9 @@ namespace WinFormsPresentationLayer
             // 
             this.txtRG.BackColor = System.Drawing.SystemColors.Window;
             this.txtRG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtRG.Location = new System.Drawing.Point(276, 84);
+            this.txtRG.Location = new System.Drawing.Point(146, 86);
             this.txtRG.Name = "txtRG";
-            this.txtRG.Size = new System.Drawing.Size(203, 22);
+            this.txtRG.Size = new System.Drawing.Size(333, 22);
             this.txtRG.TabIndex = 66;
             // 
             // gbDadosPessoais
@@ -217,14 +191,12 @@ namespace WinFormsPresentationLayer
             this.gbDadosPessoais.Controls.Add(this.lblDataNascimento);
             this.gbDadosPessoais.Controls.Add(this.dtpDataNascimento);
             this.gbDadosPessoais.Controls.Add(this.txtTelefone);
-            this.gbDadosPessoais.Controls.Add(this.cmbGenero);
             this.gbDadosPessoais.Controls.Add(this.txtNome);
             this.gbDadosPessoais.Controls.Add(this.lblTelefone);
             this.gbDadosPessoais.Controls.Add(this.lblCPF);
             this.gbDadosPessoais.Controls.Add(this.txtCPF);
             this.gbDadosPessoais.Controls.Add(this.lblEmail);
             this.gbDadosPessoais.Controls.Add(this.txtEmail);
-            this.gbDadosPessoais.Controls.Add(this.lblGenero);
             this.gbDadosPessoais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDadosPessoais.ForeColor = System.Drawing.Color.Black;
             this.gbDadosPessoais.Location = new System.Drawing.Point(15, 25);
@@ -246,7 +218,7 @@ namespace WinFormsPresentationLayer
             this.lblSalario.AutoSize = true;
             this.lblSalario.BackColor = System.Drawing.Color.Transparent;
             this.lblSalario.ForeColor = System.Drawing.Color.Black;
-            this.lblSalario.Location = new System.Drawing.Point(273, 110);
+            this.lblSalario.Location = new System.Drawing.Point(273, 111);
             this.lblSalario.Name = "lblSalario";
             this.lblSalario.Size = new System.Drawing.Size(51, 16);
             this.lblSalario.TabIndex = 69;
@@ -464,7 +436,6 @@ namespace WinFormsPresentationLayer
 
         #endregion
         private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.ComboBox cmbGenero;
         private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.Label lblDataNascimento;
         private System.Windows.Forms.Label lblTelefone;
@@ -473,7 +444,6 @@ namespace WinFormsPresentationLayer
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.DateTimePicker dtpDataNascimento;
         private System.Windows.Forms.Label lblCPF;
-        private System.Windows.Forms.Label lblGenero;
         private System.Windows.Forms.TextBox txtCPF;
         private System.Windows.Forms.Label lblRG;
         private System.Windows.Forms.TextBox txtRG;

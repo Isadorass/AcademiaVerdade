@@ -37,7 +37,7 @@ namespace WinFormsPresentationLayer
             this.lblDuracao = new System.Windows.Forms.Label();
             this.txtDuracao = new System.Windows.Forms.TextBox();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnDesativar = new System.Windows.Forms.Button();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.dgvCadastroPlanos = new System.Windows.Forms.DataGridView();
@@ -84,9 +84,9 @@ namespace WinFormsPresentationLayer
             this.lblQntsVezes.ForeColor = System.Drawing.Color.Black;
             this.lblQntsVezes.Location = new System.Drawing.Point(246, 85);
             this.lblQntsVezes.Name = "lblQntsVezes";
-            this.lblQntsVezes.Size = new System.Drawing.Size(107, 18);
+            this.lblQntsVezes.Size = new System.Drawing.Size(148, 18);
             this.lblQntsVezes.TabIndex = 57;
-            this.lblQntsVezes.Text = "Quantas vezes";
+            this.lblQntsVezes.Text = "Quantidade de Vezes";
             // 
             // txtQntdVezes
             // 
@@ -129,20 +129,20 @@ namespace WinFormsPresentationLayer
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // btnExcluir
+            // btnDesativar
             // 
-            this.btnExcluir.BackColor = System.Drawing.Color.LightSlateGray;
-            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnExcluir.Location = new System.Drawing.Point(249, 347);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(93, 34);
-            this.btnExcluir.TabIndex = 67;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = false;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            this.btnDesativar.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnDesativar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDesativar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDesativar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDesativar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDesativar.Location = new System.Drawing.Point(249, 347);
+            this.btnDesativar.Name = "btnDesativar";
+            this.btnDesativar.Size = new System.Drawing.Size(93, 34);
+            this.btnDesativar.TabIndex = 67;
+            this.btnDesativar.Text = "Desativar";
+            this.btnDesativar.UseVisualStyleBackColor = false;
+            this.btnDesativar.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAtualizar
             // 
@@ -176,21 +176,19 @@ namespace WinFormsPresentationLayer
             // 
             // dgvCadastroPlanos
             // 
+            this.dgvCadastroPlanos.AllowUserToAddRows = false;
+            this.dgvCadastroPlanos.AllowUserToDeleteRows = false;
             this.dgvCadastroPlanos.BackgroundColor = System.Drawing.Color.LightSlateGray;
             this.dgvCadastroPlanos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCadastroPlanos.Location = new System.Drawing.Point(29, 145);
             this.dgvCadastroPlanos.Name = "dgvCadastroPlanos";
+            this.dgvCadastroPlanos.ReadOnly = true;
             this.dgvCadastroPlanos.Size = new System.Drawing.Size(414, 196);
             this.dgvCadastroPlanos.TabIndex = 64;
             // 
             // cmbModalidade
             // 
             this.cmbModalidade.FormattingEnabled = true;
-            this.cmbModalidade.Items.AddRange(new object[] {
-            "Natação",
-            "Pilates",
-            "Musculação",
-            "Zumba"});
             this.cmbModalidade.Location = new System.Drawing.Point(30, 47);
             this.cmbModalidade.Name = "cmbModalidade";
             this.cmbModalidade.Size = new System.Drawing.Size(213, 21);
@@ -200,10 +198,10 @@ namespace WinFormsPresentationLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 408);
+            this.ClientSize = new System.Drawing.Size(475, 387);
             this.Controls.Add(this.cmbModalidade);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnDesativar);
             this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.dgvCadastroPlanos);
@@ -216,6 +214,7 @@ namespace WinFormsPresentationLayer
             this.Controls.Add(this.lblModalidade);
             this.Name = "FormCadastroDePlanos";
             this.Text = "Cadastrar Planos";
+            this.Load += new System.EventHandler(this.FormCadastroDePlanos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadastroPlanos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -231,7 +230,7 @@ namespace WinFormsPresentationLayer
         private System.Windows.Forms.Label lblDuracao;
         private System.Windows.Forms.TextBox txtDuracao;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnDesativar;
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.DataGridView dgvCadastroPlanos;

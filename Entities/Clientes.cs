@@ -20,5 +20,10 @@ namespace Entites
         public bool Ativo { get; set; }
         public Usuarios Usuarios { get; set; }
         public string Genero { get; set; }
+
+        public Clientes()
+        {
+            this.Usuarios = new Usuarios();
+        }
     }
 }

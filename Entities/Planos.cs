@@ -14,5 +14,10 @@ namespace Entites
         public int Duracao { get; set; }
         public Modalidades Modalidade { get; set; }
 
+        public Planos()
+        {
+            this.Modalidade = new Modalidades();
+        }
+
     }
 }

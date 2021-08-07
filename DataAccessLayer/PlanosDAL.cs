@@ -20,7 +20,8 @@ namespace DataAccessLayer
 
             SqlCommand command = new SqlCommand();
             command.Connection = connection;
-            command.CommandText = "DELETE FROM PLANOS WHERE ID = @ID";
+            command.CommandText = "update PLANOS" +
+                "set ATIVO = 1 WHERE ID = @ID";
             command.Parameters.AddWithValue("@ID", id);
 
             Response resposta = new Response();
@@ -58,7 +59,7 @@ namespace DataAccessLayer
 
             SqlCommand command = new SqlCommand();
             command.Connection = connection;
-            command.CommandText = "SELECT * FROM PLANOS ORDER BY ID";
+            command.CommandText = "SELECT P.ID, P.DURACAO, P.QTDVEZES, P.VALOR, M.NOME FROM PLANOS P INNER JOIN MODALIDADES M ON P.MODALIDADE = M.ID";
 
             DataResponse<Planos> resposta = new DataResponse<Planos>();
 
@@ -75,7 +76,7 @@ namespace DataAccessLayer
                     plano.Duracao = Convert.ToInt32(reader["DURACAO"]);
                     plano.QtdVezes = Convert.ToInt32(reader["QTDVEZES"]);
                     plano.Valor = Convert.ToInt32(reader["VALOR"]);
-                    plano.Modalidade.ID = Convert.ToInt32(reader["MODALIDADE"]);
+                    plano.Modalidade.Nome = Convert.ToString(reader["NOME"]);
                     planos.Add(plano);
                 }
 
@@ -100,7 +101,41 @@ namespace DataAccessLayer
 
         public Response Insert(Planos p)
         {
-            throw new NotImplementedException();
+            string connectionString = SqlUtils.CONNECTION_STRING;
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = connectionString;
+
+            SqlCommand command = new SqlCommand();
+            command.Connection = connection;
+            command.CommandText = "INSERT INTO PLANOS (MODALIDADE, VALOR, QTDVEZES, DURACAO, ATIVO) VALUES " +
+                "(@MODALIDADE, @VALOR, @QTDVEZES, @DURACAO, @ATIVO)";
+            command.Parameters.AddWithValue("@MODALIDADE", p.Modalidade.ID);
+            command.Parameters.AddWithValue("@VALOR", p.Valor);
+            command.Parameters.AddWithValue("@QTDVEZES", p.QtdVezes);
+            command.Parameters.AddWithValue("@DURACAO", p.Duracao);
+            command.Parameters.AddWithValue("@ATIVO", 0);
+
+
+            Response resposta = new Response();
+
+            try
+            {
+                connection.Open();
+                command.ExecuteNonQuery();
+                resposta.Success = true;
+                resposta.Message = "Plano inserido com sucesso!";
+                return resposta;
+            }
+            catch (Exception ex)
+            {
+                resposta.Success = false;
+                resposta.Message = "Erro no banco de dados, contate o administrador.";
+                return resposta;
+            }
+            finally
+            {
+                connection.Dispose();
+            }
         }
 
         public Response Update(Planos p)

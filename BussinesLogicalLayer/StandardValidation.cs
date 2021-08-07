@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,73 @@ namespace BussinesLogicalLayer
     {
         private const double SALARIO_MINIMO = 1100;
 
+        public bool ValidationQuantidadeVezes(string qtdVezes)
+        {
+            if ((!ValidationNullOrWhiteSpace(qtdVezes)))
+            {
+                return false;
+            }
+
+            if ((ValidationNumero(qtdVezes)))
+            {
+                if((Convert.ToInt32(qtdVezes) > 7))
+                {
+                    return false;
+                }else
+                {
+                    return true;
+                }  
+            }
+            return false;
+        }
+
+        public bool ValidationValor(string value)
+        {
+            if (!ValidationNullOrWhiteSpace(value))
+            {
+                return false;
+            }
+            List<string> listaValue = new List<string>();
+            Regex regex = new Regex("[0-9]");
+
+            for (int i = 0; i < value.Length; i++)
+            {
+                listaValue.Add(value.Substring(i, 1));
+            }
+
+            foreach (string valor in listaValue)
+            {
+                if (!regex.IsMatch(valor))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public bool ValidationColor(List<Label> lista)
+        {
+            foreach(Label label in lista)
+            {
+                if (label.ForeColor == Color.Red)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        public Color ValidationsLabel(bool sucess)
+        {
+            Color color;
+            if (sucess == true)
+            {
+                return color = Color.Black;
+            }
+            else
+            {
+                return color = Color.Red;
+            }
+        }
         public bool ValidationsComissao(string comissao)
         {
             return true;
@@ -59,6 +127,10 @@ namespace BussinesLogicalLayer
 
         public bool ValidationNumero(string value)
         {
+            if (!ValidationNullOrWhiteSpace(value))
+            {
+                return false;
+            }
             List<string> listaValue = new List<string>();
             Regex regex = new Regex("[0-9]");
 
@@ -88,11 +160,11 @@ namespace BussinesLogicalLayer
             return false;
         }
 
-        public string ValidationsNome(string nome)
+        public bool ValidationsNome(string nome)
         {
             if (string.IsNullOrWhiteSpace(nome))
             {
-                return "";
+                return false;
             }
 
             if (ValidationsComprimento(nome, 3, 70) && ValidationsCaracteres(nome))
@@ -103,10 +175,9 @@ namespace BussinesLogicalLayer
                 TextInfo textInfo = Thread.CurrentThread.CurrentCulture.TextInfo;
                 nome = textInfo.ToTitleCase(nome);
 
-                return nome;
+                return true;
             }
-
-            return "";
+            return false;
         }
 
         public bool ValidationsCpf(string cpf)
@@ -215,8 +286,21 @@ namespace BussinesLogicalLayer
             return true;
         }
 
+        public bool ValidationNullOrWhiteSpace(string value) {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return false;
+            }
+            return true;
+        }
+
         public bool ValidationsCaracteres(string value)
         {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return false;
+            }
+
             for (int i = 0; i < value.Length; i++)
             {
                 char letra = value[i];

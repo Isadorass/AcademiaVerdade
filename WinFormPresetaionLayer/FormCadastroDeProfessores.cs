@@ -33,153 +33,71 @@ namespace WinFormsPresentationLayer
             btnEditar.BackColor = colorBtn;
         }
 
+
+        private List<Label> CriarListaLabel()
+        {
+            List<Label> listaLabel = new List<Label>();
+
+            listaLabel.Add(lblNome);
+            listaLabel.Add(lblEmail);
+            listaLabel.Add(lblTelefone);
+            listaLabel.Add(lblCPF);
+            listaLabel.Add(lblRG);
+            listaLabel.Add(lblDataNascimento);
+            listaLabel.Add(lblSalario);
+            listaLabel.Add(lblRua);
+            listaLabel.Add(lblNumero);
+            listaLabel.Add(lblBairro);
+            listaLabel.Add(lblCidade);
+            listaLabel.Add(lblComplemento);
+
+            return listaLabel;
+        }
+
+        private bool ValidarCampos()
+        {
+            lblNome.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationsNome(txtNome.Text));
+            lblEmail.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationsEmail(txtEmail.Text));
+            lblTelefone.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationsTelefone(txtTelefone.Text));
+            lblCPF.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationsCpf(txtCPF.Text));
+            lblRG.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationsRua(txtRG.Text));
+            lblDataNascimento.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationsDataNascimento(dtpDataNascimento.Text));
+            lblSalario.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationsSalario(txtSalario.Text));
+            lblRua.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationsRua(txtRua.Text));
+            lblNumero.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationNumero(txtNumero.Text));
+            lblBairro.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationsBairro(txtBairro.Text));
+            lblCidade.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationsCidade(txtCidade.Text));
+            lblComplemento.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationNullOrWhiteSpace(txtComplemento.Text));
+
+
+            if ((standardValidation.ValidationColor(CriarListaLabel())))
+            {
+                return true;
+            }
+            return false;
+        }
+
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            bool nome, cpf, rg, telefone, email, dataNascimento, genero,
-                 salario, comissao, rua, bairro, cidade, numero, complemento;
 
-            if (standardValidation.ValidationsNome(txtNome.Text).Equals(""))
+            /*if (ValidarCampos())
             {
-                lblNome.ForeColor = Color.Red;
-                nome = false;
-            }
-            else
-            {
-                lblNome.ForeColor = Color.Black;
-                nome = true;
-            }
+                Professores professores = new Professores();
 
-            if (standardValidation.ValidationsCpf(txtCPF.Text))
-            {
-                lblCPF.ForeColor = Color.Black;
-                cpf = true;
-            }
-            else
-            {
-                lblCPF.ForeColor = Color.Red;
-                cpf = false;
-            }
+                professores.Nome = txtNome.Text;
+                professores.Email = (txtEmail.Text);
+                professores.Telefone = (txtTelefone.Text);
+                professores.CPF = (txtCPF.Text);
+                professores.RG = (txtRG.Text);
+                professores.DataNascimento = Convert.ToDateTime(dtpDataNascimento.Text);
+                professores.Salario = Convert.ToDouble(txtSalario.Text);
+                professores.Ativo = true;
+                professores.Usuarios.ID = clientesBLL.SearchClienteInUsuario(txtEmail.Text);
+                professores.Genero = cmbGenero.Text;
 
-            if (standardValidation.ValidationsRg(txtRG.Text))
-            {
-                lblRG.ForeColor = Color.Black;
-                rg = true;
-            }
-            else
-            {
-                lblRG.ForeColor = Color.Red;
-                rg = false;
-            }
+                clientesBLL.Insert(professores);
+            }*/
 
-            if (standardValidation.ValidationsTelefone(txtTelefone.Text))
-            {
-                lblTelefone.ForeColor = Color.Black;
-                telefone = true;
-            }
-            else
-            {
-                lblTelefone.ForeColor = Color.Red;
-                telefone = false;
-            }
-
-            if (standardValidation.ValidationsEmail(txtEmail.Text))
-            {
-                lblEmail.ForeColor = Color.Black;
-                email = true;
-            }
-            else
-            {
-                lblEmail.ForeColor = Color.Red;
-                email = false;
-            }
-
-            if (standardValidation.ValidationsDataNascimento(dtpDataNascimento.Text))
-            {
-                lblDataNascimento.ForeColor = Color.Black;
-                dataNascimento = true;
-            }
-            else
-            {
-                lblDataNascimento.ForeColor = Color.Red;
-                dataNascimento = false;
-            }
-
-            if (standardValidation.ValidationsGenero(cmbGenero.Text))
-            {
-                lblGenero.ForeColor = Color.Black;
-                genero = true;
-            }
-            else
-            {
-                lblGenero.ForeColor = Color.Red;
-                genero = false;
-            }
-
-            if (standardValidation.ValidationsSalario(txtSalario.Text))
-            {
-                lblSalario.ForeColor = Color.Black;
-                salario = true;
-            }
-            else
-            {
-                lblSalario.ForeColor = Color.Red;
-                salario = false;
-            }            
-
-            if (standardValidation.ValidationsRua(txtRua.Text))
-            {
-                lblRua.ForeColor = Color.Black;
-                rua = true;
-            }
-            else
-            {
-                lblRua.ForeColor = Color.Red;
-                rua = false;
-            }
-
-            if (standardValidation.ValidationsBairro(txtBairro.Text))
-            {
-                lblBairro.ForeColor = Color.Black;
-                bairro = true;
-            }
-            else
-            {
-                lblBairro.ForeColor = Color.Red;
-                bairro = false;
-            }
-
-            if (standardValidation.ValidationsCidade(txtCidade.Text))
-            {
-                lblCidade.ForeColor = Color.Black;
-                cidade = true;
-            }
-            else
-            {
-                lblCidade.ForeColor = Color.Red;
-                cidade = false;
-            }
-
-            if (standardValidation.ValidationNumero(txtNumero.Text))
-            {
-                lblNumero.ForeColor = Color.Black;
-                numero = true;
-            }
-            else
-            {
-                lblNumero.ForeColor = Color.Red;
-                numero = false;
-            }
-
-            if (standardValidation.ValidationsComplementoNumero(txtComplemento.Text, txtNumero.Text))
-            {
-                lblComplemento.ForeColor = Color.Black;
-                complemento = true;
-            }
-            else
-            {
-                lblComplemento.ForeColor = Color.Red;
-                complemento = false;
-            }
         }
 
         private void AtualizarGrid()

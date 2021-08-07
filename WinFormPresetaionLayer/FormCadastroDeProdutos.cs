@@ -33,43 +33,51 @@ namespace WinFormsPresentationLayer
             btnEditar.BackColor = colorBtn;
         }
 
+        private List<Label> CriarListaLabel()
+        {
+            List<Label> listaLabel = new List<Label>();
+
+            listaLabel.Add(lblCategoria);
+            listaLabel.Add(lblDescricaoProduto);
+            listaLabel.Add(lblEstoque);
+            listaLabel.Add(lblNomeProduto);
+            listaLabel.Add(lblPreco);
+
+            return listaLabel;
+        }
+        
+        private bool ValidarCampos()
+        {
+            lblCategoria.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationNullOrWhiteSpace(cmbCategoria.Text));
+            lblDescricaoProduto.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationsCaracteres(txtDescricaoProduto.Text));
+            lblEstoque.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationNullOrWhiteSpace(txtEstoque.Text));
+            lblNomeProduto.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationsCaracteres(txtNomeProduto.Text));
+            lblPreco.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationValor(txtPreco.Text));
+
+            if ((standardValidation.ValidationColor(CriarListaLabel())))
+            {
+                return true;
+            }
+            return false;
+        }
+
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            bool nomeProduto, qntdEstoque, descricaoProduto, suplementos, 
-                 mantimentos, acessorios;
 
-            if (standardValidation.ValidationsNome(txtNomeProduto.Text).Equals(""))
+            if (ValidarCampos())
             {
-                lblNomeProduto.ForeColor = Color.Red;
-                nomeProduto = false;
-            }
-            else
-            {
-                lblNomeProduto.ForeColor = Color.Black;
-                nomeProduto = true;
-            }
+                Produtos p = new Produtos();
 
-            if (standardValidation.ValidationsNome(txtQntdEstoqueProduto.Text).Equals(""))
-            {
-                lblEstoque.ForeColor = Color.Red;
-                qntdEstoque = false;
-            }
-            else
-            {
-                lblEstoque.ForeColor = Color.Black;
-                qntdEstoque = true;
+                p.Categoria.ID = (int)cmbCategoria.SelectedValue;
+                p.Descricao = txtDescricaoProduto.Text;
+                p.Estoque = txtEstoque.Text.ToInt();
+                p.Preco = txtPreco.Text.ToDouble();
+
+                Response response = produtosBLL.Insert(p);
+
+                MessageBox.Show(response.Message);
             }
 
-            if (standardValidation.ValidationsNome(txtDescricaoProduto.Text).Equals(""))
-            {
-                lblDescricaoProduto.ForeColor = Color.Red;
-                descricaoProduto = false;
-            }
-            else
-            {
-                lblDescricaoProduto.ForeColor = Color.Black;
-                descricaoProduto = true;
-            }
         }
 
         private void AtualizarGrid()
@@ -113,5 +121,7 @@ namespace WinFormsPresentationLayer
                 this.Close();
             }
         }
+
+        
     }
 }

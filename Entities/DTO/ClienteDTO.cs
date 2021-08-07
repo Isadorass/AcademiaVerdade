@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace Entities.DTO
         public DateTime DataNascimento { get; set; }
         public DateTime DataMatricula { get; set; }
         public string Genero { get; set; }
+        [Browsable(false)]
         public bool Ativo { get; set; }
     }
 }

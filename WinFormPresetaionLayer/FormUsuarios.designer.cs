@@ -189,7 +189,6 @@ namespace WinFormsPresentationLayer
             // 
             this.cmbPapel.FormattingEnabled = true;
             this.cmbPapel.Items.AddRange(new object[] {
-            "Professor",
             "Recepção",
             "Administrador"});
             this.cmbPapel.Location = new System.Drawing.Point(228, 88);

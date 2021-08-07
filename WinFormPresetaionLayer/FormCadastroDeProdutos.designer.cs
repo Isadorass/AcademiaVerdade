@@ -33,17 +33,17 @@ namespace WinFormsPresentationLayer
             this.txtDescricaoProduto = new System.Windows.Forms.TextBox();
             this.lblNomeProduto = new System.Windows.Forms.Label();
             this.lblEstoque = new System.Windows.Forms.Label();
-            this.txtQntdEstoqueProduto = new System.Windows.Forms.TextBox();
             this.lblCategoria = new System.Windows.Forms.Label();
-            this.chMantimentos = new System.Windows.Forms.CheckBox();
-            this.chSuplementos = new System.Windows.Forms.CheckBox();
-            this.chAcessorios = new System.Windows.Forms.CheckBox();
             this.txtNomeProduto = new System.Windows.Forms.TextBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.dgvCadastroProdutos = new System.Windows.Forms.DataGridView();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
+            this.txtPreco = new System.Windows.Forms.TextBox();
+            this.lblPreco = new System.Windows.Forms.Label();
+            this.txtEstoque = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadastroProdutos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,9 +55,9 @@ namespace WinFormsPresentationLayer
             this.lblDescricaoProduto.ForeColor = System.Drawing.Color.Black;
             this.lblDescricaoProduto.Location = new System.Drawing.Point(28, 88);
             this.lblDescricaoProduto.Name = "lblDescricaoProduto";
-            this.lblDescricaoProduto.Size = new System.Drawing.Size(152, 18);
+            this.lblDescricaoProduto.Size = new System.Drawing.Size(133, 18);
             this.lblDescricaoProduto.TabIndex = 43;
-            this.lblDescricaoProduto.Text = "Descrição do produto";
+            this.lblDescricaoProduto.Text = "Descrição Produto";
             // 
             // txtDescricaoProduto
             // 
@@ -65,7 +65,7 @@ namespace WinFormsPresentationLayer
             this.txtDescricaoProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDescricaoProduto.Location = new System.Drawing.Point(31, 109);
             this.txtDescricaoProduto.Name = "txtDescricaoProduto";
-            this.txtDescricaoProduto.Size = new System.Drawing.Size(339, 20);
+            this.txtDescricaoProduto.Size = new System.Drawing.Size(172, 20);
             this.txtDescricaoProduto.TabIndex = 41;
             // 
             // lblNomeProduto
@@ -86,20 +86,11 @@ namespace WinFormsPresentationLayer
             this.lblEstoque.BackColor = System.Drawing.Color.Transparent;
             this.lblEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstoque.ForeColor = System.Drawing.Color.Black;
-            this.lblEstoque.Location = new System.Drawing.Point(209, 30);
+            this.lblEstoque.Location = new System.Drawing.Point(28, 205);
             this.lblEstoque.Name = "lblEstoque";
-            this.lblEstoque.Size = new System.Drawing.Size(161, 18);
+            this.lblEstoque.Size = new System.Drawing.Size(142, 18);
             this.lblEstoque.TabIndex = 46;
-            this.lblEstoque.Text = "Quantidade no estoque";
-            // 
-            // txtQntdEstoqueProduto
-            // 
-            this.txtQntdEstoqueProduto.BackColor = System.Drawing.SystemColors.Window;
-            this.txtQntdEstoqueProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtQntdEstoqueProduto.Location = new System.Drawing.Point(209, 52);
-            this.txtQntdEstoqueProduto.Name = "txtQntdEstoqueProduto";
-            this.txtQntdEstoqueProduto.Size = new System.Drawing.Size(161, 20);
-            this.txtQntdEstoqueProduto.TabIndex = 45;
+            this.lblEstoque.Text = "Quantidade Estoque";
             // 
             // lblCategoria
             // 
@@ -112,39 +103,6 @@ namespace WinFormsPresentationLayer
             this.lblCategoria.Size = new System.Drawing.Size(76, 18);
             this.lblCategoria.TabIndex = 47;
             this.lblCategoria.Text = "Categoria:";
-            // 
-            // chMantimentos
-            // 
-            this.chMantimentos.AutoSize = true;
-            this.chMantimentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chMantimentos.Location = new System.Drawing.Point(31, 209);
-            this.chMantimentos.Name = "chMantimentos";
-            this.chMantimentos.Size = new System.Drawing.Size(120, 24);
-            this.chMantimentos.TabIndex = 48;
-            this.chMantimentos.Text = "Mantimentos";
-            this.chMantimentos.UseVisualStyleBackColor = true;
-            // 
-            // chSuplementos
-            // 
-            this.chSuplementos.AutoSize = true;
-            this.chSuplementos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chSuplementos.Location = new System.Drawing.Point(31, 179);
-            this.chSuplementos.Name = "chSuplementos";
-            this.chSuplementos.Size = new System.Drawing.Size(122, 24);
-            this.chSuplementos.TabIndex = 49;
-            this.chSuplementos.Text = "Suplementos";
-            this.chSuplementos.UseVisualStyleBackColor = true;
-            // 
-            // chAcessorios
-            // 
-            this.chAcessorios.AutoSize = true;
-            this.chAcessorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chAcessorios.Location = new System.Drawing.Point(31, 236);
-            this.chAcessorios.Name = "chAcessorios";
-            this.chAcessorios.Size = new System.Drawing.Size(106, 24);
-            this.chAcessorios.TabIndex = 50;
-            this.chAcessorios.Text = "Acessórios";
-            this.chAcessorios.UseVisualStyleBackColor = true;
             // 
             // txtNomeProduto
             // 
@@ -220,23 +178,59 @@ namespace WinFormsPresentationLayer
             this.dgvCadastroProdutos.Size = new System.Drawing.Size(240, 256);
             this.dgvCadastroProdutos.TabIndex = 58;
             // 
+            // cmbCategoria
+            // 
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Location = new System.Drawing.Point(31, 168);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(172, 21);
+            this.cmbCategoria.TabIndex = 59;
+            // 
+            // txtPreco
+            // 
+            this.txtPreco.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPreco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPreco.Location = new System.Drawing.Point(213, 51);
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.Size = new System.Drawing.Size(157, 20);
+            this.txtPreco.TabIndex = 64;
+            // 
+            // lblPreco
+            // 
+            this.lblPreco.AutoSize = true;
+            this.lblPreco.BackColor = System.Drawing.Color.Transparent;
+            this.lblPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPreco.ForeColor = System.Drawing.Color.Black;
+            this.lblPreco.Location = new System.Drawing.Point(210, 30);
+            this.lblPreco.Name = "lblPreco";
+            this.lblPreco.Size = new System.Drawing.Size(48, 18);
+            this.lblPreco.TabIndex = 63;
+            this.lblPreco.Text = "Preço";
+            // 
+            // txtEstoque
+            // 
+            this.txtEstoque.Location = new System.Drawing.Point(31, 227);
+            this.txtEstoque.Name = "txtEstoque";
+            this.txtEstoque.Size = new System.Drawing.Size(172, 20);
+            this.txtEstoque.TabIndex = 65;
+            // 
             // FormCadastroDeProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(670, 359);
+            this.Controls.Add(this.txtEstoque);
+            this.Controls.Add(this.txtPreco);
+            this.Controls.Add(this.lblPreco);
+            this.Controls.Add(this.cmbCategoria);
             this.Controls.Add(this.dgvCadastroProdutos);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.txtNomeProduto);
-            this.Controls.Add(this.chAcessorios);
-            this.Controls.Add(this.chSuplementos);
-            this.Controls.Add(this.chMantimentos);
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.lblEstoque);
-            this.Controls.Add(this.txtQntdEstoqueProduto);
             this.Controls.Add(this.lblDescricaoProduto);
             this.Controls.Add(this.txtDescricaoProduto);
             this.Controls.Add(this.lblNomeProduto);
@@ -254,16 +248,16 @@ namespace WinFormsPresentationLayer
         private System.Windows.Forms.TextBox txtDescricaoProduto;
         private System.Windows.Forms.Label lblNomeProduto;
         private System.Windows.Forms.Label lblEstoque;
-        private System.Windows.Forms.TextBox txtQntdEstoqueProduto;
         private System.Windows.Forms.Label lblCategoria;
-        private System.Windows.Forms.CheckBox chMantimentos;
-        private System.Windows.Forms.CheckBox chSuplementos;
-        private System.Windows.Forms.CheckBox chAcessorios;
         private System.Windows.Forms.TextBox txtNomeProduto;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.DataGridView dgvCadastroProdutos;
+        private System.Windows.Forms.ComboBox cmbCategoria;
+        private System.Windows.Forms.TextBox txtPreco;
+        private System.Windows.Forms.Label lblPreco;
+        private System.Windows.Forms.TextBox txtEstoque;
     }
 }

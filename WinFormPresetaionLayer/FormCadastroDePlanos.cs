@@ -18,71 +18,72 @@ namespace WinFormsPresentationLayer
 
         private StandardValidation standardValidation = new StandardValidation();
         private PlanosBLL planosBLL = new PlanosBLL();
+        private ModalidadesBLL modalidadeBLL = new ModalidadesBLL();
+
 
         public FormCadastroDePlanos()
         {
             InitializeComponent();
-            backgroundBtn();
+            BackgroundBtn();
+            this.dgvCadastroPlanos.DataError += DgvCadastroPlanos_DataError;
         }
 
-        private void backgroundBtn()
+
+        private List<Label> CriarListaLabel()
+        {
+            List<Label> listaLabel = new List<Label>();
+
+            listaLabel.Add(lblModalidade);
+            listaLabel.Add(lblDuracao);
+            listaLabel.Add(lblQntsVezes);
+            listaLabel.Add(lblValor);
+
+            return listaLabel;
+        }
+
+        private bool ValidarCampos()
+        {
+            lblModalidade.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationNullOrWhiteSpace(cmbModalidade.Text));
+            lblDuracao.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationNumero(txtDuracao.Text));
+            lblQntsVezes.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationQuantidadeVezes(txtQntdVezes.Text));
+            lblValor.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationValor(txtValor.Text));
+
+            if ((standardValidation.ValidationColor(CriarListaLabel())))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private void DgvCadastroPlanos_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+        }
+
+        private void BackgroundBtn()
         {
             Color colorBtn = Color.FromArgb(26, 175, 235);
             btnCadastrar.BackColor = colorBtn;
             btnAtualizar.BackColor = colorBtn;
-            btnExcluir.BackColor = colorBtn;
+            btnDesativar.BackColor = colorBtn;
             btnEditar.BackColor = colorBtn;
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            bool modalidade, valor, duracao, qntdVezes;
+            if (ValidarCampos())
+            {
+                Planos p = new Planos();
 
-            if (standardValidation.ValidationsNome(cmbModalidade.Text).Equals(""))
-            {
-                lblModalidade.ForeColor = Color.Red;
-                modalidade = false;
-            }
-            else
-            {
-                lblModalidade.ForeColor = Color.Black;
-                modalidade = true;
-            }
+                p.Modalidade.ID = (int) cmbModalidade.SelectedValue;
+                p.Duracao = txtDuracao.Text.ToInt();
+                p.QtdVezes = txtQntdVezes.Text.ToInt();
+                p.Valor = txtValor.Text.ToDouble();
 
-            if (standardValidation.ValidationsNome(txtValor.Text).Equals(""))
-            {
-                lblValor.ForeColor = Color.Red;
-                valor = false;
-            }
-            else
-            {
-                lblValor.ForeColor = Color.Black;
-                valor = true;
-            }
+                Response response = planosBLL.Insert(p);
 
-            if (standardValidation.ValidationsNome(txtDuracao.Text).Equals(""))
-            {
-                lblDuracao.ForeColor = Color.Red;
-                duracao = false;
+                MessageBox.Show(response.Message);
             }
-            else
-            {
-                lblDuracao.ForeColor = Color.Black;
-                duracao = true;
-            }
-
-            if (standardValidation.ValidationsNome(txtQntdVezes.Text).Equals(""))
-            {
-                lblQntsVezes.ForeColor = Color.Red;
-                qntdVezes = false;
-            }
-            else
-            {
-                lblQntsVezes.ForeColor = Color.Black;
-                qntdVezes = true;
-            }
-
-
         }
 
         private void AtualizarGrid()
@@ -105,6 +106,8 @@ namespace WinFormsPresentationLayer
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
+
+            int id = (int)dgvCadastroPlanos.SelectedRows[0].DataBoundItem;
             Response r = planosBLL.Delete(int.Parse(cmbModalidade.Text));
             MessageBox.Show(r.Message);
             if (r.Success)
@@ -128,6 +131,22 @@ namespace WinFormsPresentationLayer
             if (r.Success)
             {
                 this.Close();
+            }
+        }
+
+        private void FormCadastroDePlanos_Load(object sender, EventArgs e)
+        {
+
+            DataResponse<Modalidades> response = modalidadeBLL.GetAll();
+            if (response.Success)
+            {
+                cmbModalidade.DataSource = response.Data;
+                cmbModalidade.ValueMember = "ID";
+                cmbModalidade.DisplayMember = "Nome"; 
+            }
+            else
+            {
+                MessageBox.Show(response.Message);
             }
         }
     }

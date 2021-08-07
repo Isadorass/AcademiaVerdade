@@ -2,7 +2,6 @@ C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\bin\Debug\WinForm
 C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\bin\Debug\WinFormPresetaionLayer.pdb
 C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\obj\Debug\WinFormPresentationLayer.csprojAssemblyReference.cache
 C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\obj\Debug\WinFormsPresentationLayer.FormCadastroDeClientes.resources
-C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\obj\Debug\WinFormsPresentationLayer.FormCadastroDeModalidades.resources
 C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\obj\Debug\WinFormsPresentationLayer.FormCadastroDeProdutos.resources
 C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\obj\Debug\WinFormsPresentationLayer.FormCadastroDeProfessores.resources
 C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\obj\Debug\WinFormPresetaionLayer.Properties.Resources.resources
@@ -23,3 +22,4 @@ C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\obj\Debug\WinForm
 C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\obj\Debug\WinFormsPresentationLayer.FormCadastroDePlanos.resources
 C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\obj\Debug\WinFormsPresentationLayer.FormMenu.resources
 C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\obj\Debug\WinFormsPresentationLayer.FormUsuarios.resources
+C:\Users\rodri\source\repos\AcademiaZyX\WinFormPresetaionLayer\obj\Debug\WinFormsPresentationLayer.FormLogin.resources
