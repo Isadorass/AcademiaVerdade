@@ -59,15 +59,7 @@ namespace WinFormsPresentationLayer
 
             if ((standardValidation.ValidationColor(CriarListaLabel())))
             {
-                if (clientesBLL.SearchClienteInUsuario(txtEmail.Text) != 0)
-                {
-                    lblMensagem.Text = "Preencha todos os campos corretamente para cadastrar o cliente";
-                    return true;
-                } 
-                else
-                {
-                    lblMensagem.Text = "Insira um email correspondente de um usuario";
-                }                
+                return true;              
             }
             return false;
         }
@@ -97,7 +89,7 @@ namespace WinFormsPresentationLayer
             { 
                 Clientes cliente = new Clientes();
 
-                cliente.Nome = txtNome.Text;
+                cliente.Nome = (txtNome.Text);
                 cliente.CPF = (txtCPF.Text);
                 cliente.RG = (txtRG.Text);
                 cliente.TelefoneCelular = (txtTelefoneCelular.Text);
@@ -106,7 +98,6 @@ namespace WinFormsPresentationLayer
                 cliente.DataNascimento = Convert.ToDateTime(dtpDataNascimento.Text);
                 cliente.DataMatricula = Convert.ToDateTime(dtpDataMatricula.Text);
                 cliente.Ativo = true;
-                cliente.Usuarios.ID = clientesBLL.SearchClienteInUsuario(txtEmail.Text);
                 cliente.Genero = cmbGenero.Text;
 
                 clientesBLL.Insert(cliente);

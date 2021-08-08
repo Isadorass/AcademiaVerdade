@@ -55,6 +55,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCadastroDeCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroDeCategoria.Designer.cs">
+      <DependentUpon>FormCadastroDeCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCadastroDeCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,12 @@
     <Compile Include="FormCadastroDeModalidade.Designer.cs">
       <DependentUpon>FormCadastroDeModalidade.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCadastroFormaPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroFormaPagamento.Designer.cs">
+      <DependentUpon>FormCadastroFormaPagamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +108,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroDeCategoria.resx">
+      <DependentUpon>FormCadastroDeCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroDeCliente.resx">
       <DependentUpon>FormCadastroDeCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroDeModalidade.resx">
       <DependentUpon>FormCadastroDeModalidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroFormaPagamento.resx">
+      <DependentUpon>FormCadastroFormaPagamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -138,6 +156,10 @@
     <ProjectReference Include="..\BussinesLogicalLayer\BussinesLogicalLayer.csproj">
       <Project>{6E4901B7-749F-4BF9-A021-B02B2A0E0179}</Project>
       <Name>BussinesLogicalLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{E987DF35-CF47-4359-9112-D49FACF7AD18}</Project>
+      <Name>DataAccessLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{98CEF364-4952-4D2D-AD30-CB922D62C564}</Project>

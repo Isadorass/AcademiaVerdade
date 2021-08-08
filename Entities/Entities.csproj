@@ -46,6 +46,8 @@
     <Compile Include="Clientes.cs" />
     <Compile Include="DTO\ClienteDTO.cs" />
     <Compile Include="Enum\Papeis.cs" />
+    <Compile Include="FormaPagamento.cs" />
+    <Compile Include="Interfaces\IFormaPagamentoService.cs" />
     <Compile Include="Interfaces\ICategoriasService.cs" />
     <Compile Include="Interfaces\IClientesService.cs" />
     <Compile Include="Interfaces\IModalidadesService.cs" />

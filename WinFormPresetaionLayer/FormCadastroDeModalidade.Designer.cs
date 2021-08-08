@@ -88,17 +88,17 @@ namespace WinFormPresetaionLayer
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // FormCdastroDeModalidade
+            // FormCadastroDeModalidade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 355);
+            this.ClientSize = new System.Drawing.Size(282, 169);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.lblDescricao);
             this.Controls.Add(this.lblValor);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.txtValor);
-            this.Name = "FormCdastroDeModalidade";
+            this.Name = "FormCadastroDeModalidade";
             this.Text = "FormCdastroDeModalidade";
             this.ResumeLayout(false);
             this.PerformLayout();

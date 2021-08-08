@@ -211,44 +211,6 @@ namespace DataAccessLayer
                 connection.Dispose();
             }
         }
-
-        public int SearchClienteInUsuario(string email)
-        {
-            string connectionString = SqlUtils.CONNECTION_STRING;
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = connectionString;
-
-            SqlCommand command = new SqlCommand();
-            command.Connection = connection;
-            command.CommandText = "select ID from USUARIOS where EMAIL = @EMAIL";
-            command.Parameters.AddWithValue("@EMAIL", email);
-
-            DataResponse<Usuarios> resposta = new DataResponse<Usuarios>();
-
-            try
-            {
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {  
-                    int idUsuario = Convert.ToInt32(reader["ID"]);
-                    if (idUsuario != 0)
-                    {
-                        return idUsuario;
-                    }                   
-                }
-                return 0;
-            }
-            catch (Exception ex)
-            { 
-                MessageBox.Show("Ocorreu um erro inesperado, procure o administrador do sistema.");
-                return 0;
-            }
-            finally
-            {
-                connection.Dispose();
-            }
-        }
+        
     }
 }

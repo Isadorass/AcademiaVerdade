@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="CategoriasDAL.cs" />
     <Compile Include="ClientesDAL.cs" />
+    <Compile Include="FormaPagamentoDAL.cs" />
     <Compile Include="ModalidadesDAL.cs" />
     <Compile Include="PlanosDAL.cs" />
     <Compile Include="ProdutosDAL.cs" />

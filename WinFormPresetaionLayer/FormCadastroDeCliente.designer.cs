@@ -229,9 +229,9 @@ namespace WinFormsPresentationLayer
             this.btnAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtualizar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtualizar.ForeColor = System.Drawing.Color.White;
-            this.btnAtualizar.Location = new System.Drawing.Point(730, 100);
+            this.btnAtualizar.Location = new System.Drawing.Point(746, 100);
             this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(43, 19);
+            this.btnAtualizar.Size = new System.Drawing.Size(27, 19);
             this.btnAtualizar.TabIndex = 51;
             this.btnAtualizar.Tag = "Atualizar Tabela";
             this.btnAtualizar.Text = "º";
@@ -307,7 +307,7 @@ namespace WinFormsPresentationLayer
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(804, 374);
+            this.ClientSize = new System.Drawing.Size(788, 374);
             this.Controls.Add(this.lblRG);
             this.Controls.Add(this.txtRG);
             this.Controls.Add(this.dgvCadastroClientes);

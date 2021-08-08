@@ -48,9 +48,5 @@ namespace BussinesLogicalLayer
             return clientesDAL.Update(c);
         }
 
-        public int SearchClienteInUsuario(string email)
-        {
-            return clientesDAL.SearchClienteInUsuario(email);
-        }
     }
 }

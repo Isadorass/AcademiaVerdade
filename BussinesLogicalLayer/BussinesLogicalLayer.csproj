@@ -51,6 +51,7 @@
     <Compile Include="CategoriasBLL.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="ClientesBLL.cs" />
+    <Compile Include="FormaPagamentoBLL.cs" />
     <Compile Include="ModalidadesBLL.cs" />
     <Compile Include="PlanosBLL.cs" />
     <Compile Include="ProdutosBLL.cs" />

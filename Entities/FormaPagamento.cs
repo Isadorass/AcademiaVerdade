@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entites
+namespace Entities
 {
-    public class Categorias
+    public class FormaPagamento
     {
         public int ID { get; set; }
         public string Nome { get; set; }

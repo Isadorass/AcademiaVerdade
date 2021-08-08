@@ -1,12 +1,12 @@
 ﻿create table CLIENTE (
 	ID integer identity primary key,
 	NOME varchar(70) not null,
-	CPF varchar(11) not null,
-	RG varchar(7) not null,
+	CPF varchar(11) unique not null,
+	RG varchar(7) unique not null,
 	TELEFONE_1 varchar(13) not null,
 	TELEFONE_2 varchar(13) not null,
 	GENERO varchar(10) not null,
-	EMAIL varchar(70) not null,
+	EMAIL varchar(70) unique not null,
 	DATA_NASCIMENTO DATE not null,
 	DATA_MATRICULA DATE not null,
 	ATIVO BIT not null
@@ -15,12 +15,12 @@
 create table FUNCIONARIO (
 	ID integer identity primary key,
 	NOME varchar(70) not null,
-	CPF varchar(11) not null,
-	RG varchar(7) not null,
+	CPF varchar(11) unique not null,
+	RG varchar(7) unique not null,
 	ENDERECO varchar(200) not null,
 	SALARIO float not null,
 	COMISSAO float not null,
-	EMAIL varchar(70) not null,
+	EMAIL varchar(70) unique not null,
 	SENHA varchar(100) not null,
 	ATIVO BIT not null,
 	PAPEL varchar(15) not null
@@ -28,18 +28,18 @@ create table FUNCIONARIO (
 
 create table MODALIDADE (
 	ID integer identity primary key,
-	DESCRICAO varchar(100) not null,
+	DESCRICAO varchar(100) unique not null,
 	VALOR float not null
 )
 
 create table FORMA_PAGAMENTO(
 	ID integer identity primary key,
-	NOME varchar(50) not null
+	NOME varchar(50) unique not null
 )
 
 create table CATEGORIA(
 	ID integer identity primary key,
-	NOME varchar(50) not null
+	NOME varchar(50) unique not null
 )
 
 create table PRODUTO(
@@ -80,7 +80,7 @@ create table PRODUTO_ESTOQUE(
 
 create table VENDA(
 	ID integer identity primary key,
-	DATA date not null,
+	DATA_VENDA date not null,
 	QUANTIDADE integer not null,
 	CLIENTE_ID integer not null,
 	FUNCIONARIO_ID integer not null,
