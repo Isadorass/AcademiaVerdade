@@ -29,8 +29,6 @@ namespace WinFormsPresentationLayer
             Color colorBtn = Color.FromArgb(26, 175, 235);
             btnCadastrar.BackColor = colorBtn;
             btnAtualizar.BackColor = colorBtn;
-            btnExcluir.BackColor = colorBtn;
-            btnEditar.BackColor = colorBtn;
         }
 
 
@@ -43,7 +41,6 @@ namespace WinFormsPresentationLayer
             listaLabel.Add(lblTelefone);
             listaLabel.Add(lblCPF);
             listaLabel.Add(lblRG);
-            listaLabel.Add(lblDataNascimento);
             listaLabel.Add(lblSalario);
             listaLabel.Add(lblRua);
             listaLabel.Add(lblNumero);
@@ -61,7 +58,6 @@ namespace WinFormsPresentationLayer
             lblTelefone.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationsTelefone(txtTelefone.Text));
             lblCPF.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationsCpf(txtCPF.Text));
             lblRG.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationsRua(txtRG.Text));
-            lblDataNascimento.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationsDataNascimento(dtpDataNascimento.Text));
             lblSalario.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationsSalario(txtSalario.Text));
             lblRua.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationsRua(txtRua.Text));
             lblNumero.ForeColor = standardValidation.ValidationsLabel(standardValidation.ValidationNumero(txtNumero.Text));
@@ -110,35 +106,6 @@ namespace WinFormsPresentationLayer
             else
             {
                 MessageBox.Show(response.Message);
-            }
-        }
-
-        private void btnAtualizar_Click(object sender, EventArgs e)
-        {
-            AtualizarGrid();
-        }
-
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-            Response r = professoresBLL.Delete(int.Parse(txtNome.Text));
-            MessageBox.Show(r.Message);
-            if (r.Success)
-            {
-                this.Close();
-            }
-        }
-
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            Response r = professoresBLL.Update(new Professores()
-            {
-                ID = int.Parse(txtNome.Text),
-                Nome = txtNome.Text
-            });
-            MessageBox.Show(r.Message);
-            if (r.Success)
-            {
-                this.Close();
             }
         }
     }

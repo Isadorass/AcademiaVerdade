@@ -19,8 +19,7 @@ namespace WinFormsPresentationLayer
 
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormUsuarios formUsuarios = new FormUsuarios();
-            formUsuarios.Visible = true;
+
         }
 
         private void clienteToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -28,7 +27,5 @@ namespace WinFormsPresentationLayer
             FormCadastroDeClientes formCadastroDeClientes = new FormCadastroDeClientes();
             formCadastroDeClientes.Visible = true;
         }
-
-       
     }
 }

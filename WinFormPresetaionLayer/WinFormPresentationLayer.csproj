@@ -55,17 +55,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadastroDeClientes.cs">
+    <Compile Include="FormCadastroDeCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadastroDeClientes.designer.cs">
-      <DependentUpon>FormCadastroDeClientes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormCadastroDePlanos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormCadastroDePlanos.designer.cs">
-      <DependentUpon>FormCadastroDePlanos.cs</DependentUpon>
+    <Compile Include="FormCadastroDeCliente.designer.cs">
+      <DependentUpon>FormCadastroDeCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCadastroDeProdutos.cs">
       <SubType>Form</SubType>
@@ -73,11 +67,17 @@
     <Compile Include="FormCadastroDeProdutos.designer.cs">
       <DependentUpon>FormCadastroDeProdutos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadastroDeProfessores.cs">
+    <Compile Include="FormCadastroDeFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadastroDeProfessores.designer.cs">
-      <DependentUpon>FormCadastroDeProfessores.cs</DependentUpon>
+    <Compile Include="FormCadastroDeFuncionario.designer.cs">
+      <DependentUpon>FormCadastroDeFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastroDeModalidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroDeModalidade.Designer.cs">
+      <DependentUpon>FormCadastroDeModalidade.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -91,37 +91,28 @@
     <Compile Include="FormMenu.designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormUsuarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormUsuarios.designer.cs">
-      <DependentUpon>FormUsuarios.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadastroDeClientes.resx">
-      <DependentUpon>FormCadastroDeClientes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormCadastroDePlanos.resx">
-      <DependentUpon>FormCadastroDePlanos.cs</DependentUpon>
+    <EmbeddedResource Include="FormCadastroDeCliente.resx">
+      <DependentUpon>FormCadastroDeCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastroDeProdutos.resx">
       <DependentUpon>FormCadastroDeProdutos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadastroDeProfessores.resx">
-      <DependentUpon>FormCadastroDeProfessores.cs</DependentUpon>
+    <EmbeddedResource Include="FormCadastroDeFuncionario.resx">
+      <DependentUpon>FormCadastroDeFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroDeModalidade.resx">
+      <DependentUpon>FormCadastroDeModalidade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormUsuarios.resx">
-      <DependentUpon>FormUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

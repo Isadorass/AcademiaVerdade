@@ -17,7 +17,7 @@ namespace WinFormPresetaionLayer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormCadastroDeProdutos());
+            Application.Run(new FormCadastroDeModalidade());
         }
     }
 }

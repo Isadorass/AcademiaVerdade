@@ -31,16 +31,21 @@ namespace WinFormsPresentationLayer
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.professorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contratoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gerenciamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.funcionárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pesquisarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estoqueToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.clienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.atualizarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pesquisarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.estoqueToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +54,8 @@ namespace WinFormsPresentationLayer
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.LightSlateGray;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastrosToolStripMenuItem});
+            this.cadastrosToolStripMenuItem,
+            this.gerenciamentoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(909, 24);
@@ -59,39 +65,14 @@ namespace WinFormsPresentationLayer
             // cadastrosToolStripMenuItem
             // 
             this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuárioToolStripMenuItem,
-            this.professorToolStripMenuItem,
             this.clienteToolStripMenuItem,
             this.planoToolStripMenuItem,
             this.categoriaToolStripMenuItem,
-            this.modalidadeToolStripMenuItem,
             this.produtoToolStripMenuItem,
             this.contratoToolStripMenuItem});
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.cadastrosToolStripMenuItem.Text = "Cadastros";
-            // 
-            // usuárioToolStripMenuItem
-            // 
-            this.usuárioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clienteToolStripMenuItem1});
-            this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.usuárioToolStripMenuItem.Text = "Usuário";
-            this.usuárioToolStripMenuItem.Click += new System.EventHandler(this.usuárioToolStripMenuItem_Click);
-            // 
-            // clienteToolStripMenuItem1
-            // 
-            this.clienteToolStripMenuItem1.Name = "clienteToolStripMenuItem1";
-            this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(111, 22);
-            this.clienteToolStripMenuItem1.Text = "Cliente";
-            this.clienteToolStripMenuItem1.Click += new System.EventHandler(this.clienteToolStripMenuItem1_Click);
-            // 
-            // professorToolStripMenuItem
-            // 
-            this.professorToolStripMenuItem.Name = "professorToolStripMenuItem";
-            this.professorToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.professorToolStripMenuItem.Text = "Professor";
             // 
             // clienteToolStripMenuItem
             // 
@@ -111,12 +92,6 @@ namespace WinFormsPresentationLayer
             this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.categoriaToolStripMenuItem.Text = "Categoria";
             // 
-            // modalidadeToolStripMenuItem
-            // 
-            this.modalidadeToolStripMenuItem.Name = "modalidadeToolStripMenuItem";
-            this.modalidadeToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.modalidadeToolStripMenuItem.Text = "Plano";
-            // 
             // produtoToolStripMenuItem
             // 
             this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
@@ -129,6 +104,65 @@ namespace WinFormsPresentationLayer
             this.contratoToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.contratoToolStripMenuItem.Text = "Contrato";
             // 
+            // gerenciamentoToolStripMenuItem
+            // 
+            this.gerenciamentoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.funcionárioToolStripMenuItem,
+            this.clienteToolStripMenuItem1});
+            this.gerenciamentoToolStripMenuItem.Name = "gerenciamentoToolStripMenuItem";
+            this.gerenciamentoToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
+            this.gerenciamentoToolStripMenuItem.Text = "Gerenciamento";
+            // 
+            // funcionárioToolStripMenuItem
+            // 
+            this.funcionárioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.atualizarToolStripMenuItem,
+            this.pesquisarToolStripMenuItem,
+            this.estoqueToolStripMenuItem1});
+            this.funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
+            this.funcionárioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.funcionárioToolStripMenuItem.Text = "Atualizar";
+            // 
+            // atualizarToolStripMenuItem
+            // 
+            this.atualizarToolStripMenuItem.Name = "atualizarToolStripMenuItem";
+            this.atualizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.atualizarToolStripMenuItem.Text = "Cliente";
+            // 
+            // pesquisarToolStripMenuItem
+            // 
+            this.pesquisarToolStripMenuItem.Name = "pesquisarToolStripMenuItem";
+            this.pesquisarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pesquisarToolStripMenuItem.Text = "Funcionário";
+            // 
+            // estoqueToolStripMenuItem1
+            // 
+            this.estoqueToolStripMenuItem1.Name = "estoqueToolStripMenuItem1";
+            this.estoqueToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.estoqueToolStripMenuItem1.Text = "Estoque";
+            // 
+            // clienteToolStripMenuItem1
+            // 
+            this.clienteToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.atualizarToolStripMenuItem1,
+            this.pesquisarToolStripMenuItem1,
+            this.estoqueToolStripMenuItem2});
+            this.clienteToolStripMenuItem1.Name = "clienteToolStripMenuItem1";
+            this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.clienteToolStripMenuItem1.Text = "Pesquisar";
+            // 
+            // atualizarToolStripMenuItem1
+            // 
+            this.atualizarToolStripMenuItem1.Name = "atualizarToolStripMenuItem1";
+            this.atualizarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.atualizarToolStripMenuItem1.Text = "Cliente";
+            // 
+            // pesquisarToolStripMenuItem1
+            // 
+            this.pesquisarToolStripMenuItem1.Name = "pesquisarToolStripMenuItem1";
+            this.pesquisarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.pesquisarToolStripMenuItem1.Text = "Funcionário";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -139,6 +173,12 @@ namespace WinFormsPresentationLayer
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            // 
+            // estoqueToolStripMenuItem2
+            // 
+            this.estoqueToolStripMenuItem2.Name = "estoqueToolStripMenuItem2";
+            this.estoqueToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.estoqueToolStripMenuItem2.Text = "Estoque";
             // 
             // FormMenu
             // 
@@ -163,15 +203,20 @@ namespace WinFormsPresentationLayer
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem cadastrosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuárioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem professorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem planoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem categoriaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modalidadeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem produtoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contratoToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem gerenciamentoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem funcionárioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem atualizarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pesquisarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem atualizarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem pesquisarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem estoqueToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem estoqueToolStripMenuItem2;
     }
 }

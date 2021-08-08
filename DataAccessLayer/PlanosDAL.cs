@@ -76,7 +76,7 @@ namespace DataAccessLayer
                     plano.Duracao = Convert.ToInt32(reader["DURACAO"]);
                     plano.QtdVezes = Convert.ToInt32(reader["QTDVEZES"]);
                     plano.Valor = Convert.ToInt32(reader["VALOR"]);
-                    plano.Modalidade.Nome = Convert.ToString(reader["NOME"]);
+                    plano.Modalidade.Descricao = Convert.ToString(reader["NOME"]);
                     planos.Add(plano);
                 }
 

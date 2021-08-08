@@ -83,8 +83,6 @@ namespace WinFormsPresentationLayer
             Color colorBtn = Color.FromArgb(26, 175, 235);
             btnCadastrar.BackColor = colorBtn;
             btnAtualizar.BackColor = colorBtn;
-            btnExcluir.BackColor = colorBtn;
-            btnEditar.BackColor = colorBtn;
         }
 
         private void ToolTipBtnAtualizarGrid()
@@ -148,47 +146,41 @@ namespace WinFormsPresentationLayer
             }
         }
 
+        private void PegarValorCheckBox()
+        {
+            foreach (DataGridViewRow row in dgvCadastroClientes.Rows)
+            {
+                if (row.IsNewRow) continue;
+
+                if (Convert.ToBoolean(row.Cells["Coluna"].FormattedValue))
+                {
+                    // Capture os valores aqui 
+                }
+            }
+        }
+
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
+
+            var col = new DataGridViewCheckBoxColumn();
+            col.Name = "Coluna";
+            col.HeaderText = "Selecionado";
+            col.FalseValue = "0";
+            col.TrueValue = "1";
+
+            //Make the default checked
+            col.CellTemplate.Value = true;
+            col.CellTemplate.Style.NullValue = false;
+
+            dgvCadastroClientes.Columns.Insert(0, col);
+
+
             AtualizarGrid();
         }
 
-        private void btnExcluir_Click(object sender, EventArgs e)
+        private void FormCadastroDeClientes_Load(object sender, EventArgs e)
         {
-            if (standardValidation.ValidationsCpf(txtCPF.Text))
-            {
-                lblCPF.ForeColor = Color.Black;
-                clientesBLL.Delete(txtCPF.Text);
-            }
-            else
-            {
-                lblCPF.ForeColor = Color.Red;
-                
-            }            
-        }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            if (ValidarCampos())
-            {
-                Clientes cliente = new Clientes();
-                Usuarios usuario = new Usuarios();
-
-                cliente.Nome = txtNome.Text;
-                cliente.CPF = (txtCPF.Text);
-                cliente.RG = (txtRG.Text);
-                cliente.TelefoneCelular = (txtTelefoneCelular.Text);
-                cliente.TelefoneFixo = (txtTelefoneFixo.Text);
-                cliente.Email = txtEmail.Text;
-                cliente.DataNascimento = Convert.ToDateTime(dtpDataNascimento.Text);
-                cliente.DataMatricula = Convert.ToDateTime(dtpDataMatricula.Text);
-                cliente.Ativo = true;
-                usuario.ID = clientesBLL.SearchClienteInUsuario(txtEmail.Text);
-                cliente.Usuarios = usuario;
-                cliente.Genero = cmbGenero.Text;
-
-                clientesBLL.Update(cliente);
-            }
         }
     }
 }

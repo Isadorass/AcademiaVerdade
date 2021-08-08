@@ -71,7 +71,7 @@ namespace DataAccessLayer
                 {
                     Modalidades modalidade = new Modalidades();
                     modalidade.ID = Convert.ToInt32(reader["ID"]);
-                    modalidade.Nome = Convert.ToString(reader["NOME"]);
+                    modalidade.Descricao = Convert.ToString(reader["NOME"]);
                     modalidades.Add(modalidade);
                 }
 
@@ -103,7 +103,7 @@ namespace DataAccessLayer
             SqlCommand command = new SqlCommand();
             command.Connection = connection;
             command.CommandText = "INSERT INTO MODALIDADES (NOME) VALUES (@NOME)";
-            command.Parameters.AddWithValue("@NOME", m.Nome);
+            command.Parameters.AddWithValue("@NOME", m.Descricao);
 
             Response resposta = new Response();
             try
@@ -142,7 +142,7 @@ namespace DataAccessLayer
             SqlCommand command = new SqlCommand();
             command.Connection = connection;
             command.CommandText = "UPDATE MODALIDADES SET NOME = @NOME WHERE ID = @ID";
-            command.Parameters.AddWithValue("@NOME", m.Nome);
+            command.Parameters.AddWithValue("@NOME", m.Descricao);
             command.Parameters.AddWithValue("@ID", m.ID);
 
 

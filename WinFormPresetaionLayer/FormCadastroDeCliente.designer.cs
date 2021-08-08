@@ -45,8 +45,6 @@ namespace WinFormsPresentationLayer
             this.lblCPF = new System.Windows.Forms.Label();
             this.lblGenero = new System.Windows.Forms.Label();
             this.txtCPF = new System.Windows.Forms.TextBox();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.dgvCadastroClientes = new System.Windows.Forms.DataGridView();
@@ -221,36 +219,6 @@ namespace WinFormsPresentationLayer
             this.txtCPF.Size = new System.Drawing.Size(154, 20);
             this.txtCPF.TabIndex = 35;
             // 
-            // btnEditar
-            // 
-            this.btnEditar.BackColor = System.Drawing.Color.LightSlateGray;
-            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(358, 323);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(103, 34);
-            this.btnEditar.TabIndex = 53;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.BackColor = System.Drawing.Color.LightSlateGray;
-            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.ForeColor = System.Drawing.Color.White;
-            this.btnExcluir.Location = new System.Drawing.Point(203, 324);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(93, 34);
-            this.btnExcluir.TabIndex = 52;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = false;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
             // btnAtualizar
             // 
             this.btnAtualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -279,7 +247,7 @@ namespace WinFormsPresentationLayer
             this.btnCadastrar.ForeColor = System.Drawing.Color.White;
             this.btnCadastrar.Location = new System.Drawing.Point(40, 324);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(105, 34);
+            this.btnCadastrar.Size = new System.Drawing.Size(421, 34);
             this.btnCadastrar.TabIndex = 50;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
@@ -343,8 +311,6 @@ namespace WinFormsPresentationLayer
             this.Controls.Add(this.lblRG);
             this.Controls.Add(this.txtRG);
             this.Controls.Add(this.dgvCadastroClientes);
-            this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.dtpDataMatricula);
@@ -366,7 +332,8 @@ namespace WinFormsPresentationLayer
             this.Controls.Add(this.panelFundoMensagem);
             this.MaximizeBox = false;
             this.Name = "FormCadastroDeClientes";
-            this.Text = "Cadastrar Clientes";
+            this.Text = "Cadastrar Cliente";
+            this.Load += new System.EventHandler(this.FormCadastroDeClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadastroClientes)).EndInit();
             this.panelFundoMensagem.ResumeLayout(false);
             this.panelFundoMensagem.PerformLayout();
@@ -393,8 +360,6 @@ namespace WinFormsPresentationLayer
         private System.Windows.Forms.Label lblCPF;
         private System.Windows.Forms.Label lblGenero;
         private System.Windows.Forms.TextBox txtCPF;
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.DataGridView dgvCadastroClientes;
