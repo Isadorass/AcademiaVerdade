@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DataAccessLayer
 {
@@ -57,7 +58,7 @@ namespace DataAccessLayer
 
             SqlCommand command = new SqlCommand();
             command.Connection = connection;
-            command.CommandText = "SELECT * FROM MODALIDADES ORDER BY ID";
+            command.CommandText = "SELECT * FROM MODALIDADE ORDER BY ID";
 
             DataResponse<Modalidades> resposta = new DataResponse<Modalidades>();
 
@@ -71,7 +72,9 @@ namespace DataAccessLayer
                 {
                     Modalidades modalidade = new Modalidades();
                     modalidade.ID = Convert.ToInt32(reader["ID"]);
-                    modalidade.Descricao = Convert.ToString(reader["NOME"]);
+                    modalidade.Descricao = Convert.ToString(reader["DESCRICAO"]);
+                    modalidade.Valor = Convert.ToDouble(reader["VALOR"]);
+
                     modalidades.Add(modalidade);
                 }
 

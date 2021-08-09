@@ -18,12 +18,6 @@ namespace Entites
         public DateTime DataNascimento { get; set; }
         public DateTime DataMatricula { get; set; }
         public bool Ativo { get; set; }
-        public Usuarios Usuarios { get; set; }
         public string Genero { get; set; }
-
-        public Clientes()
-        {
-            this.Usuarios = new Usuarios();
-        }
     }
 }

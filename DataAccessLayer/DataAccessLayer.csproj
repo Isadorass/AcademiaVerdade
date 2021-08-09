@@ -48,10 +48,9 @@
     <Compile Include="ModalidadesDAL.cs" />
     <Compile Include="PlanosDAL.cs" />
     <Compile Include="ProdutosDAL.cs" />
-    <Compile Include="ProfessoresDAL.cs" />
+    <Compile Include="FuncionarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlUtils.cs" />
-    <Compile Include="UsuariosDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entities\Entities.csproj">

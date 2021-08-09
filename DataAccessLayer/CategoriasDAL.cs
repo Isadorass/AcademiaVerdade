@@ -71,7 +71,7 @@ namespace DataAccessLayer
                 {
                     Categorias categoria = new Categorias();
                     categoria.ID = Convert.ToInt32(reader["ID"]);
-                    categoria.Descricao = Convert.ToString(reader["DESCRICAO"]);
+                    categoria.Nome = Convert.ToString(reader["NOME"]);
                     categorias.Add(categoria);
                 }
 
@@ -103,7 +103,7 @@ namespace DataAccessLayer
             SqlCommand command = new SqlCommand();
             command.Connection = connection;
             command.CommandText = "INSERT INTO CATEGORIAS (NOME) VALUES (@NOME)";
-            command.Parameters.AddWithValue("@NOME", c.Descricao);
+            command.Parameters.AddWithValue("@NOME", c.Nome);
 
             Response resposta = new Response();
             try
@@ -142,7 +142,7 @@ namespace DataAccessLayer
             SqlCommand command = new SqlCommand();
             command.Connection = connection;
             command.CommandText = "UPDATE CATEGORIAS SET NOME = @NOME WHERE ID = @ID";
-            command.Parameters.AddWithValue("@NOME", c.Descricao);
+            command.Parameters.AddWithValue("@NOME", c.Nome);
             command.Parameters.AddWithValue("@ID", c.ID);
 
 

@@ -49,46 +49,88 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Atualizar\FormAtualizarCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Atualizar\FormAtualizarCategoria.Designer.cs">
+      <DependentUpon>FormAtualizarCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadastroDeCategoria.cs">
+    <Compile Include="Atualizar\FormAtualizarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadastroDeCategoria.Designer.cs">
+    <Compile Include="Atualizar\FormAtualizarCliente.Designer.cs">
+      <DependentUpon>FormAtualizarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Atualizar\FormAtualizarEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Atualizar\FormAtualizarEstoque.designer.cs">
+      <DependentUpon>FormAtualizarEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Atualizar\FormAtualizarFormaPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Atualizar\FormAtualizarFormaPagamento.Designer.cs">
+      <DependentUpon>FormAtualizarFormaPagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Atualizar\FormAtualizarFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Atualizar\FormAtualizarFuncionario.Designer.cs">
+      <DependentUpon>FormAtualizarFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Atualizar\FormAtualizarModalidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Atualizar\FormAtualizarModalidade.Designer.cs">
+      <DependentUpon>FormAtualizarModalidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Atualizar\FormAtualizarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Atualizar\FormAtualizarProduto.Designer.cs">
+      <DependentUpon>FormAtualizarProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastrar\FormCadastroEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastrar\FormCadastroEstoque.designer.cs">
+      <DependentUpon>FormCadastroEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastrar\FormCadastroDeCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastrar\FormCadastroDeCategoria.Designer.cs">
       <DependentUpon>FormCadastroDeCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadastroDeCliente.cs">
+    <Compile Include="Cadastrar\FormCadastroDeCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadastroDeCliente.designer.cs">
+    <Compile Include="Cadastrar\FormCadastroDeCliente.designer.cs">
       <DependentUpon>FormCadastroDeCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadastroDeProdutos.cs">
+    <Compile Include="Cadastrar\FormCadastroDeProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadastroDeProdutos.designer.cs">
+    <Compile Include="Cadastrar\FormCadastroDeProdutos.designer.cs">
       <DependentUpon>FormCadastroDeProdutos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadastroDeFuncionario.cs">
+    <Compile Include="Cadastrar\FormCadastroDeFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadastroDeFuncionario.designer.cs">
+    <Compile Include="Cadastrar\FormCadastroDeFuncionario.designer.cs">
       <DependentUpon>FormCadastroDeFuncionario.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadastroDeModalidade.cs">
+    <Compile Include="Cadastrar\FormCadastroDeModalidade.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadastroDeModalidade.Designer.cs">
+    <Compile Include="Cadastrar\FormCadastroDeModalidade.Designer.cs">
       <DependentUpon>FormCadastroDeModalidade.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadastroFormaPagamento.cs">
+    <Compile Include="Cadastrar\FormCadastroFormaPagamento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadastroFormaPagamento.Designer.cs">
+    <Compile Include="Cadastrar\FormCadastroFormaPagamento.Designer.cs">
       <DependentUpon>FormCadastroFormaPagamento.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
@@ -103,27 +145,90 @@
     <Compile Include="FormMenu.designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pesquisar\FormPesquisarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisar\FormPesquisarCategoria.Designer.cs">
+      <DependentUpon>FormPesquisarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisar\FormPesquisarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisar\FormPesquisarCliente.Designer.cs">
+      <DependentUpon>FormPesquisarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisar\FormPesquisarEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisar\FormPesquisarEstoque.designer.cs">
+      <DependentUpon>FormPesquisarEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisar\FormPesquisarFormaPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisar\FormPesquisarFormaPagamento.Designer.cs">
+      <DependentUpon>FormPesquisarFormaPagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisar\FormPesquisarFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisar\FormPesquisarFuncionario.Designer.cs">
+      <DependentUpon>FormPesquisarFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisar\FormPesquisarModalidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisar\FormPesquisarModalidade.Designer.cs">
+      <DependentUpon>FormPesquisarModalidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisar\FormPesquisarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisar\FormPesquisarProduto.Designer.cs">
+      <DependentUpon>FormPesquisarProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Atualizar\FormAtualizarCategoria.resx">
+      <DependentUpon>FormAtualizarCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadastroDeCategoria.resx">
+    <EmbeddedResource Include="Atualizar\FormAtualizarCliente.resx">
+      <DependentUpon>FormAtualizarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Atualizar\FormAtualizarEstoque.resx">
+      <DependentUpon>FormAtualizarEstoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Atualizar\FormAtualizarFormaPagamento.resx">
+      <DependentUpon>FormAtualizarFormaPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Atualizar\FormAtualizarFuncionario.resx">
+      <DependentUpon>FormAtualizarFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Atualizar\FormAtualizarModalidade.resx">
+      <DependentUpon>FormAtualizarModalidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Atualizar\FormAtualizarProduto.resx">
+      <DependentUpon>FormAtualizarProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastrar\FormCadastroEstoque.resx">
+      <DependentUpon>FormCadastroEstoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastrar\FormCadastroDeCategoria.resx">
       <DependentUpon>FormCadastroDeCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadastroDeCliente.resx">
+    <EmbeddedResource Include="Cadastrar\FormCadastroDeCliente.resx">
       <DependentUpon>FormCadastroDeCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadastroDeProdutos.resx">
+    <EmbeddedResource Include="Cadastrar\FormCadastroDeProdutos.resx">
       <DependentUpon>FormCadastroDeProdutos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadastroDeFuncionario.resx">
+    <EmbeddedResource Include="Cadastrar\FormCadastroDeFuncionario.resx">
       <DependentUpon>FormCadastroDeFuncionario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadastroDeModalidade.resx">
+    <EmbeddedResource Include="Cadastrar\FormCadastroDeModalidade.resx">
       <DependentUpon>FormCadastroDeModalidade.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadastroFormaPagamento.resx">
+    <EmbeddedResource Include="Cadastrar\FormCadastroFormaPagamento.resx">
       <DependentUpon>FormCadastroFormaPagamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
@@ -131,6 +236,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisar\FormPesquisarCategoria.resx">
+      <DependentUpon>FormPesquisarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisar\FormPesquisarCliente.resx">
+      <DependentUpon>FormPesquisarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisar\FormPesquisarEstoque.resx">
+      <DependentUpon>FormPesquisarEstoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisar\FormPesquisarFormaPagamento.resx">
+      <DependentUpon>FormPesquisarFormaPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisar\FormPesquisarFuncionario.resx">
+      <DependentUpon>FormPesquisarFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisar\FormPesquisarModalidade.resx">
+      <DependentUpon>FormPesquisarModalidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisar\FormPesquisarProduto.resx">
+      <DependentUpon>FormPesquisarProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

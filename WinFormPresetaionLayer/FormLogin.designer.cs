@@ -30,7 +30,7 @@ namespace WinFormsPresentationLayer
         private void InitializeComponent()
         {
             this.lblNome = new System.Windows.Forms.Label();
-            this.txtEmailLogin = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblCPF = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.btnEntrar = new System.Windows.Forms.Button();
@@ -48,14 +48,14 @@ namespace WinFormsPresentationLayer
             this.lblNome.TabIndex = 43;
             this.lblNome.Text = "Email";
             // 
-            // txtEmailLogin
+            // txtEmail
             // 
-            this.txtEmailLogin.BackColor = System.Drawing.SystemColors.Window;
-            this.txtEmailLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmailLogin.Location = new System.Drawing.Point(12, 30);
-            this.txtEmailLogin.Name = "txtEmailLogin";
-            this.txtEmailLogin.Size = new System.Drawing.Size(343, 20);
-            this.txtEmailLogin.TabIndex = 41;
+            this.txtEmail.BackColor = System.Drawing.SystemColors.Window;
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmail.Location = new System.Drawing.Point(12, 30);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(223, 20);
+            this.txtEmail.TabIndex = 41;
             // 
             // lblCPF
             // 
@@ -75,18 +75,19 @@ namespace WinFormsPresentationLayer
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSenha.Location = new System.Drawing.Point(12, 91);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(343, 20);
+            this.txtSenha.Size = new System.Drawing.Size(223, 20);
             this.txtSenha.TabIndex = 42;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
             // btnEntrar
             // 
-            this.btnEntrar.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnEntrar.BackColor = System.Drawing.Color.Black;
             this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntrar.Location = new System.Drawing.Point(120, 134);
+            this.btnEntrar.ForeColor = System.Drawing.Color.White;
+            this.btnEntrar.Location = new System.Drawing.Point(51, 142);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(72, 32);
+            this.btnEntrar.Size = new System.Drawing.Size(145, 32);
             this.btnEntrar.TabIndex = 51;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = false;
@@ -96,12 +97,15 @@ namespace WinFormsPresentationLayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(360, 186);
+            this.ClientSize = new System.Drawing.Size(254, 186);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.lblNome);
-            this.Controls.Add(this.txtEmailLogin);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblCPF);
             this.Controls.Add(this.txtSenha);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(270, 225);
+            this.MinimumSize = new System.Drawing.Size(270, 225);
             this.Name = "FormLogin";
             this.Text = "Login";
             this.ResumeLayout(false);
@@ -112,7 +116,7 @@ namespace WinFormsPresentationLayer
         #endregion
 
         private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.TextBox txtEmailLogin;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblCPF;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Button btnEntrar;

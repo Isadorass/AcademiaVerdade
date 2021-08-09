@@ -1,4 +1,6 @@
-﻿create table CLIENTE (
+﻿--ADICONAR UNIQUE NESSAS PORRA
+
+create table CLIENTE (
 	ID integer identity primary key,
 	NOME varchar(70) not null,
 	CPF varchar(11) unique not null,
