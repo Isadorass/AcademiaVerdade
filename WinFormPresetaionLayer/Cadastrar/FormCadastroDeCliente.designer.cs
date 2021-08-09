@@ -29,6 +29,7 @@ namespace WinFormsPresentationLayer
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroDeClientes));
             this.dtpDataMatricula = new System.Windows.Forms.DateTimePicker();
             this.lblDataMatricula = new System.Windows.Forms.Label();
             this.lblTelefoneFixo = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@ namespace WinFormsPresentationLayer
             this.txtRG = new System.Windows.Forms.TextBox();
             this.lblMensagem = new System.Windows.Forms.Label();
             this.panelFundoMensagem = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModalidades)).BeginInit();
             this.panelFundoMensagem.SuspendLayout();
             this.SuspendLayout();
@@ -286,23 +286,12 @@ namespace WinFormsPresentationLayer
             this.panelFundoMensagem.Size = new System.Drawing.Size(733, 66);
             this.panelFundoMensagem.TabIndex = 63;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(540, 93);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 64;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // FormCadastroDeClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(788, 374);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblRG);
             this.Controls.Add(this.txtRG);
             this.Controls.Add(this.dgvModalidades);
@@ -324,6 +313,7 @@ namespace WinFormsPresentationLayer
             this.Controls.Add(this.lblGenero);
             this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.panelFundoMensagem);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormCadastroDeClientes";
             this.Text = "Cadastrar Cliente";
@@ -359,6 +349,5 @@ namespace WinFormsPresentationLayer
         private System.Windows.Forms.TextBox txtRG;
         private System.Windows.Forms.Label lblMensagem;
         private System.Windows.Forms.Panel panelFundoMensagem;
-        private System.Windows.Forms.Button button1;
     }
 }

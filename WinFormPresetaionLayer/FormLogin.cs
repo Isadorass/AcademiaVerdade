@@ -12,13 +12,6 @@ namespace WinFormsPresentationLayer
         public FormLogin()
         {
             InitializeComponent();
-            BackgroundBtn();
-        }
-
-        private void BackgroundBtn()
-        {
-            Color colorBtn = Color.FromArgb(26, 175, 235);
-            btnEntrar.BackColor = colorBtn;
         }
 
         private bool Logar(string email, string senha)

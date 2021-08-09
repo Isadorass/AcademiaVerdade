@@ -100,9 +100,6 @@ namespace DataAccessLayer
             command.CommandText = "INSERT INTO PRODUTOS (NOME) VALUES (@NOME)";
             command.Parameters.AddWithValue("@NOME", p.Nome);
             command.Parameters.AddWithValue("@DESCRICAO", p.Descricao);
-            command.Parameters.AddWithValue("@PRECO", p.Preco);
-            command.Parameters.AddWithValue("@ESTOQUE", p.Estoque);
-            command.Parameters.AddWithValue("@ATIVO", p.Ativo);
             command.Parameters.AddWithValue("@CATEGORIAID", p.Categoria);
 
             Response resposta = new Response();

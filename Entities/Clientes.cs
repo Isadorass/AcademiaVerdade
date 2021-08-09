@@ -12,8 +12,8 @@ namespace Entites
         public string Nome { get; set; }
         public string CPF { get; set; }
         public string RG { get; set; }
-        public string TelefoneCelular { get; set; }
-        public string TelefoneFixo { get; set; }
+        public string TelefonePrincipal { get; set; }
+        public string TelefoneSecundario { get; set; }
         public string Email { get; set; }
         public DateTime DataNascimento { get; set; }
         public DateTime DataMatricula { get; set; }

@@ -21,7 +21,7 @@ namespace DataAccessLayer
 
             SqlCommand command = new SqlCommand();
             command.Connection = connection;
-            command.CommandText = "DELETE FROM MODALIDADES WHERE ID = @ID";
+            command.CommandText = "DELETE FROM MODALIDADE WHERE ID = @ID";
             command.Parameters.AddWithValue("@ID", id);
 
             Response resposta = new Response();
@@ -36,9 +36,11 @@ namespace DataAccessLayer
             catch (Exception ex)
             {
                 resposta.Success = false;
-                if (ex.Message.Contains("FK__PLANO__MODALIDADES"))
+                if ((ex.Message.Contains("FK__FUNCIONARIO_MODALIDADE__MODALIDADE"))
+                    || (ex.Message.Contains("FK__CLIENTE_MODALIDADE__MODALIDADE")))
                 {
-                    resposta.Message = "Modalidade não pode ser excluída, pois existem atividades vinculadas a ela!";
+                    resposta.Message = "Modalidade não pode ser excluída," +
+                        "pois existem atividades vinculadas a ela!";
                     return resposta;
                 }
                 resposta.Message = "Erro no banco de dados, contate o administrador.";
@@ -105,8 +107,11 @@ namespace DataAccessLayer
 
             SqlCommand command = new SqlCommand();
             command.Connection = connection;
-            command.CommandText = "INSERT INTO MODALIDADES (NOME) VALUES (@NOME)";
-            command.Parameters.AddWithValue("@NOME", m.Descricao);
+            command.CommandText = "INSERT INTO MODALIDADE" +
+                "(DESCRICAO, VALOR) VALUES (@DESCRICAO, @VALOR)";
+            command.Parameters.AddWithValue("@DESCRICAO", m.Descricao);
+            command.Parameters.AddWithValue("@VALOR", m.Valor);
+
 
             Response resposta = new Response();
             try
@@ -121,7 +126,7 @@ namespace DataAccessLayer
             {
                 resposta.Success = false;
 
-                if (ex.Message.Contains("UQ__MODALIDADES"))
+                if (ex.Message.Contains("UQ__MODALIDADE"))
                 {
                     resposta.Message = "Modalidade já cadastrada!";
                     return resposta;
@@ -144,8 +149,11 @@ namespace DataAccessLayer
 
             SqlCommand command = new SqlCommand();
             command.Connection = connection;
-            command.CommandText = "UPDATE MODALIDADES SET NOME = @NOME WHERE ID = @ID";
-            command.Parameters.AddWithValue("@NOME", m.Descricao);
+            command.CommandText = "UPDATE MODALIDADE" +
+                "SET DESCRICAO = @DESCRICAO, VALOR = @VALOR" +
+                "WHERE ID = @ID";
+            command.Parameters.AddWithValue("@DESCRICAO", m.Descricao);
+            command.Parameters.AddWithValue("@VALOR", m.Valor);
             command.Parameters.AddWithValue("@ID", m.ID);
 
 
@@ -162,7 +170,7 @@ namespace DataAccessLayer
             {
                 resposta.Success = false;
 
-                if (ex.Message.Contains("UQ__MODALIDADES"))
+                if (ex.Message.Contains("UQ__MODALIDADE"))
                 {
                     resposta.Message = "Modalidade já cadastrada!";
                     return resposta;

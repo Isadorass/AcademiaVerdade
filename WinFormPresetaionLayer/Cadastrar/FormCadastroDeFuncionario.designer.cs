@@ -57,11 +57,11 @@ namespace WinFormsPresentationLayer
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.lblRua = new System.Windows.Forms.Label();
             this.txtRua = new System.Windows.Forms.TextBox();
-            this.dgvCadastroProfessores = new System.Windows.Forms.DataGridView();
+            this.dgvModalidade = new System.Windows.Forms.DataGridView();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.gbDadosPessoais.SuspendLayout();
             this.gbEndereco.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCadastroProfessores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvModalidade)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNome
@@ -366,14 +366,14 @@ namespace WinFormsPresentationLayer
             this.txtRua.Size = new System.Drawing.Size(261, 22);
             this.txtRua.TabIndex = 56;
             // 
-            // dgvCadastroProfessores
+            // dgvModalidade
             // 
-            this.dgvCadastroProfessores.BackgroundColor = System.Drawing.Color.LightSlateGray;
-            this.dgvCadastroProfessores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCadastroProfessores.Location = new System.Drawing.Point(522, 70);
-            this.dgvCadastroProfessores.Name = "dgvCadastroProfessores";
-            this.dgvCadastroProfessores.Size = new System.Drawing.Size(254, 314);
-            this.dgvCadastroProfessores.TabIndex = 74;
+            this.dgvModalidade.BackgroundColor = System.Drawing.Color.LightSlateGray;
+            this.dgvModalidade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvModalidade.Location = new System.Drawing.Point(522, 70);
+            this.dgvModalidade.Name = "dgvModalidade";
+            this.dgvModalidade.Size = new System.Drawing.Size(254, 314);
+            this.dgvModalidade.TabIndex = 74;
             // 
             // btnCadastrar
             // 
@@ -394,7 +394,7 @@ namespace WinFormsPresentationLayer
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 414);
-            this.Controls.Add(this.dgvCadastroProfessores);
+            this.Controls.Add(this.dgvModalidade);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.gbEndereco);
             this.Controls.Add(this.gbDadosPessoais);
@@ -404,7 +404,7 @@ namespace WinFormsPresentationLayer
             this.gbDadosPessoais.PerformLayout();
             this.gbEndereco.ResumeLayout(false);
             this.gbEndereco.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCadastroProfessores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvModalidade)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -434,7 +434,7 @@ namespace WinFormsPresentationLayer
         private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.Label lblRua;
         private System.Windows.Forms.TextBox txtRua;
-        private System.Windows.Forms.DataGridView dgvCadastroProfessores;
+        private System.Windows.Forms.DataGridView dgvModalidade;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;

@@ -46,7 +46,6 @@
     <Compile Include="ClientesDAL.cs" />
     <Compile Include="FormaPagamentoDAL.cs" />
     <Compile Include="ModalidadesDAL.cs" />
-    <Compile Include="PlanosDAL.cs" />
     <Compile Include="ProdutosDAL.cs" />
     <Compile Include="FuncionarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

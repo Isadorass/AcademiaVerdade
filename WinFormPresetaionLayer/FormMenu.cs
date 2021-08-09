@@ -172,5 +172,19 @@ namespace WinFormsPresentationLayer
             FormPesquisarProduto formPesquisarProduto = new FormPesquisarProduto();
             formPesquisarProduto.Show();
         }
+
+        private void sairToolStripMenuItem1_Click(object sender, EventArgs e)
+        {           
+            Close();
+        }
+
+        private void tocarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormMenu formMenu = new FormMenu();
+            FormLogin formLogin = new FormLogin();
+            formMenu.Closed += (s, args) => this.Close();
+            formLogin.Show();
+        }
     }
 }

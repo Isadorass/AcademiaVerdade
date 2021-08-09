@@ -1,6 +1,6 @@
 ﻿using BussinesLogicalLayer;
 using Entites;
-using Entities.DTO;
+using Entities;
 using Shared;
 using System;
 using System.Collections.Generic;
@@ -72,8 +72,8 @@ namespace WinFormsPresentationLayer
                 cliente.Nome = (txtNome.Text);
                 cliente.CPF = (txtCPF.Text);
                 cliente.RG = (txtRG.Text);
-                cliente.TelefoneCelular = (txtTelefoneCelular.Text);
-                cliente.TelefoneFixo = (txtTelefoneFixo.Text);
+                cliente.TelefonePrincipal = (txtTelefoneCelular.Text);
+                cliente.TelefoneSecundario = (txtTelefoneFixo.Text);
                 cliente.Email = txtEmail.Text;
                 cliente.DataNascimento = Convert.ToDateTime(dtpDataNascimento.Text);
                 cliente.DataMatricula = Convert.ToDateTime(dtpDataMatricula.Text);
@@ -135,9 +135,5 @@ namespace WinFormsPresentationLayer
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            PegarValorCheckBox();
-        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using BussinesLogicalLayer;
+using DataAccessLayer;
 using Entites;
 using Shared;
 using System;
@@ -17,15 +18,13 @@ namespace WinFormsPresentationLayer
     {
         private StandardValidation standardValidation = new StandardValidation();
         private FuncionarioBLL funcionarioBLL = new FuncionarioBLL();
+        private ModalidadesBLL modalidadesBLL = new ModalidadesBLL();
 
         public FormCadastroDeFuncionario()
         {
             InitializeComponent();
+            BuscarModalidades();
         }
-
-        
-
-
         private List<Label> CriarListaLabel()
         {
             List<Label> listaLabel = new List<Label>();
@@ -70,36 +69,75 @@ namespace WinFormsPresentationLayer
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
 
-            /*if (ValidarCampos())
+            if (ValidarCampos())
             {
-                Professores professores = new Professores();
+                Funcionario funcionario = new Funcionario();
 
-                professores.Nome = txtNome.Text;
-                professores.Email = (txtEmail.Text);
-                professores.Telefone = (txtTelefone.Text);
-                professores.CPF = (txtCPF.Text);
-                professores.RG = (txtRG.Text);
-                professores.DataNascimento = Convert.ToDateTime(dtpDataNascimento.Text);
-                professores.Salario = Convert.ToDouble(txtSalario.Text);
-                professores.Ativo = true;
-                professores.Usuarios.ID = clientesBLL.SearchClienteInUsuario(txtEmail.Text);
-                professores.Genero = cmbGenero.Text;
+                funcionario.Nome = txtNome.Text;
+                funcionario.Email = (txtEmail.Text);
+                funcionario.Telefone = (txtTelefone.Text);
+                funcionario.Cidade = txtCidade.Text;
+                funcionario.Bairro = txtBairro.Text;
+                funcionario.Rua = txtRua.Text;
+                funcionario.Numero = txtNumero.Text;
+                funcionario.Complemento = txtComplemento.Text;
+                funcionario.CPF = (txtCPF.Text);
+                funcionario.RG = (txtRG.Text);
+                funcionario.Salario = Convert.ToDouble(txtSalario.Text);
+                funcionario.Ativo = true;
 
-                clientesBLL.Insert(professores);
-            }*/
-
+                funcionarioBLL.Insert(funcionario);
+            }
         }
 
-        private void AtualizarGrid()
+        private void BuscarModalidades()
         {
-            DataResponse<Funcionario> response = funcionarioBLL.GetAll();
+            DataResponse<Modalidades> response = modalidadesBLL.GetAll();
+            List<Modalidades> listaModalidades = new List<Modalidades>();
+
+
+            foreach (Modalidades modalidade in response.Data)
+            {
+                Modalidades modalidades = new Modalidades();
+
+                modalidades.ID = modalidade.ID;
+                modalidades.Descricao = modalidade.Descricao;
+                modalidades.Valor = modalidade.Valor;
+
+                listaModalidades.Add(modalidades);
+            }
             if (response.Success)
             {
-                this.dgvCadastroProfessores.DataSource = response.Data;
+                var dataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
+                dataGridViewCheckBoxColumn.Name = "Checkbox";
+                dataGridViewCheckBoxColumn.HeaderText = "Selecionado";
+                dataGridViewCheckBoxColumn.FalseValue = false;
+                dataGridViewCheckBoxColumn.TrueValue = true;
+
+                //Make the default checked
+                dataGridViewCheckBoxColumn.CellTemplate.Value = true;
+                dataGridViewCheckBoxColumn.CellTemplate.Style.NullValue = false;
+
+                dgvModalidade.Columns.Insert(0, dataGridViewCheckBoxColumn);
+
+                this.dgvModalidade.DataSource = listaModalidades;
             }
             else
             {
                 MessageBox.Show(response.Message);
+            }
+        }
+
+        private void PegarValorCheckBox()
+        {
+            foreach (DataGridViewRow row in dgvModalidade.Rows)
+            {
+                if (row.IsNewRow) continue;
+
+                if (Convert.ToBoolean(row.Cells["Checkbox"].FormattedValue))
+                {
+                    int idModalidae = Convert.ToInt32(row.Cells["ID"].Value);
+                }
             }
         }
     }

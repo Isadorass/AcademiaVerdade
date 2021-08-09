@@ -241,7 +241,7 @@ namespace WinFormPresetaionLayer.Atualizar
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(143, 70);
+            this.label1.Location = new System.Drawing.Point(249, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 16);
             this.label1.TabIndex = 71;
@@ -249,16 +249,16 @@ namespace WinFormPresetaionLayer.Atualizar
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(146, 86);
+            this.textBox1.Location = new System.Drawing.Point(252, 85);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(124, 22);
+            this.textBox1.Size = new System.Drawing.Size(227, 22);
             this.textBox1.TabIndex = 70;
             // 
             // txtSalario
             // 
-            this.txtSalario.Location = new System.Drawing.Point(146, 129);
+            this.txtSalario.Location = new System.Drawing.Point(252, 45);
             this.txtSalario.Name = "txtSalario";
-            this.txtSalario.Size = new System.Drawing.Size(333, 22);
+            this.txtSalario.Size = new System.Drawing.Size(227, 22);
             this.txtSalario.TabIndex = 68;
             // 
             // lblSalario
@@ -266,7 +266,7 @@ namespace WinFormPresetaionLayer.Atualizar
             this.lblSalario.AutoSize = true;
             this.lblSalario.BackColor = System.Drawing.Color.Transparent;
             this.lblSalario.ForeColor = System.Drawing.Color.Black;
-            this.lblSalario.Location = new System.Drawing.Point(143, 110);
+            this.lblSalario.Location = new System.Drawing.Point(254, 26);
             this.lblSalario.Name = "lblSalario";
             this.lblSalario.Size = new System.Drawing.Size(51, 16);
             this.lblSalario.TabIndex = 69;
@@ -287,7 +287,7 @@ namespace WinFormPresetaionLayer.Atualizar
             // 
             this.txtTelefone.Location = new System.Drawing.Point(9, 126);
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(131, 22);
+            this.txtTelefone.Size = new System.Drawing.Size(470, 22);
             this.txtTelefone.TabIndex = 62;
             // 
             // txtNome
@@ -296,7 +296,7 @@ namespace WinFormPresetaionLayer.Atualizar
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNome.Location = new System.Drawing.Point(9, 45);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(131, 22);
+            this.txtNome.Size = new System.Drawing.Size(237, 22);
             this.txtNome.TabIndex = 50;
             // 
             // lblTelefone
@@ -325,7 +325,7 @@ namespace WinFormPresetaionLayer.Atualizar
             // 
             this.txtEmail.Location = new System.Drawing.Point(8, 85);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(132, 22);
+            this.txtEmail.Size = new System.Drawing.Size(238, 22);
             this.txtEmail.TabIndex = 52;
             // 
             // dgvModalidade

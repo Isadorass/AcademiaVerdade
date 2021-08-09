@@ -100,7 +100,7 @@ namespace DataAccessLayer
 
             SqlCommand command = new SqlCommand();
             command.Connection = connection;
-            command.CommandText = "SELECT * FROM FUNCIONARIO " +
+            command.CommandText = "SELECT * FROM FUNCIONARIO" +
                 "ORDER BY NOME";
 
             DataResponse<Funcionario> resposta = new DataResponse<Funcionario>();
@@ -109,28 +109,34 @@ namespace DataAccessLayer
             {
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
-                List<Funcionario> professores = new List<Funcionario>();
+                List<Funcionario> funcionarios = new List<Funcionario>();
 
                 while (reader.Read())
                 {
                     Funcionario funcionario = new Funcionario();
+
                     funcionario.ID = Convert.ToInt32(reader["ID"]);
                     funcionario.Nome = Convert.ToString(reader["NOME"]);
                     funcionario.CPF = Convert.ToString(reader["CPF"]);
                     funcionario.RG = Convert.ToString(reader["RG"]);
-                    funcionario.Endereco = Convert.ToString(reader["ENDERECO"]);
+                    funcionario.Cidade = Convert.ToString(reader["CIDADE"]);
+                    funcionario.Bairro = Convert.ToString(reader["BAIRRO"]);
+                    funcionario.Rua = Convert.ToString(reader["RUA"]);
+                    funcionario.Complemento = Convert.ToString(reader["COMPLEMENTO"]);
+                    funcionario.Numero = Convert.ToString(reader["NUMERO"]);
+                    funcionario.Salario = Convert.ToDouble(reader["SALARIO"]);
                     funcionario.Email = Convert.ToString(reader["EMAIL"]);
                     funcionario.Senha = Convert.ToString(reader["SENHA"]);
                     funcionario.Ativo = Convert.ToBoolean(reader["ATIVO"]);
                     funcionario.Papeis = Convert.ToString(reader["PAPEL"]);
                     funcionario.Telefone = Convert.ToString(reader["TELEFONE"]);
 
-                    professores.Add(funcionario);
+                    funcionarios.Add(funcionario);
                 }
 
                 resposta.Success = true;
                 resposta.Message = "Dados selecionados com sucesso!";
-                resposta.Data = professores;
+                resposta.Data = funcionarios;
                 return resposta;
 
             }
@@ -158,14 +164,18 @@ namespace DataAccessLayer
             command.CommandText = "INSERT INTO FUNCIONARIO" +
                 "(NOME, CPF, RG, ENDERECO, SALARIO," +
                 "COMISSAO, EMAIL, SENHA, ATIVO, PAPEL," +
-                "TELEFONE) " +
-                "VALUES (@NOME, @CPF, @RG, @ENDERECO, @SALARIO," +
+                "TELEFONE, CIDADE, BAIRRO, RUA, NUMERO, COMPLEMENTO) " +
+                "VALUES " +
+                "(@NOME, @CPF, @RG, @ENDERECO, @SALARIO," +
                 "@COMISSAO, @EMAIL, @SENHA, @ATIVO, @PAPEL," +
-                "@TELEFONE)";
+                "@TELEFONE, @CIDADE, @BAIRRO, @RUA, @NUMERO, @COMPLEMENTO)";
             command.Parameters.AddWithValue("@NOME", p.Nome);
             command.Parameters.AddWithValue("@CPF", p.CPF);
             command.Parameters.AddWithValue("@RG", p.RG);
-            command.Parameters.AddWithValue("@ENDERECO", p.Endereco);
+            command.Parameters.AddWithValue("@CIDADE", p.Cidade);
+            command.Parameters.AddWithValue("@BAIRRO", p.Bairro);
+            command.Parameters.AddWithValue("@RUA", p.Rua);
+            command.Parameters.AddWithValue("@NUMERO", p.Numero);
             command.Parameters.AddWithValue("@TELEFONE", p.Telefone);
             command.Parameters.AddWithValue("@SALARIO", p.Salario);
             command.Parameters.AddWithValue("@COMISSAO", p.Comissao);
@@ -215,11 +225,17 @@ namespace DataAccessLayer
                 "ENDERECO = @ENDERECO, SALARIO = @SALARIO," +
                 "COMISSAO = @COMISSAO, EMAIL = @EMAIL," +
                 "SENHA = @SENHA, ATIVO = @ATIVO, PAPEL = @PAPEL," +
-                "TELEFONE = @TELEFONE" +
+                "TELEFONE = @TELEFONE, CIDADE = @CIDADE, " +
+                "BAIRRO = @BAIRRO, RUA = @RUA, NUMERO = @NUMERO," +
+                "COMPLEMENTO = @COMPLEMENTO" +
                 "WHERE CPF = @CPF";
             command.Parameters.AddWithValue("@NOME", p.Nome);
             command.Parameters.AddWithValue("@CPF", p.CPF);
-            command.Parameters.AddWithValue("@ENDERECO", p.Endereco);
+            command.Parameters.AddWithValue("@CIDADE", p.Cidade);
+            command.Parameters.AddWithValue("@RUA", p.Rua);
+            command.Parameters.AddWithValue("@BAIRRO", p.Bairro);
+            command.Parameters.AddWithValue("@NUMERO", p.Numero);
+            command.Parameters.AddWithValue("@COMPLEMENTO", p.Complemento);
             command.Parameters.AddWithValue("@TELEFONE", p.Telefone);
             command.Parameters.AddWithValue("@SALARIO", p.Salario);
             command.Parameters.AddWithValue("@COMISSAO", p.Comissao);

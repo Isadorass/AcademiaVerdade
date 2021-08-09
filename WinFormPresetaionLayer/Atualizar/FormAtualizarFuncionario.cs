@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BussinesLogicalLayer;
+using Entites;
+using Shared;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +15,13 @@ namespace WinFormPresetaionLayer.Atualizar
 {
     public partial class FormAtualizarFuncionario : Form
     {
+
+        private ModalidadesBLL modalidadesBLL = new ModalidadesBLL();
+
         public FormAtualizarFuncionario()
         {
             InitializeComponent();
-            buscarModalidade();
+            BuscarModalidades();
         }
 
         private void PegarValorCheckBox()
@@ -31,19 +37,42 @@ namespace WinFormPresetaionLayer.Atualizar
             }
         }
 
-        public void buscarModalidade()
+        private void BuscarModalidades()
         {
-            var col = new DataGridViewCheckBoxColumn();
-            col.Name = "Coluna";
-            col.HeaderText = "Selecionado";
-            col.FalseValue = false;
-            col.TrueValue = true;
+            DataResponse<Modalidades> response = modalidadesBLL.GetAll();
+            List<Modalidades> listaModalidades = new List<Modalidades>();
 
-            //Make the default checked
-            col.CellTemplate.Value = true;
-            col.CellTemplate.Style.NullValue = false;
 
-            dgvModalidade.Columns.Insert(0, col);
+            foreach (Modalidades modalidade in response.Data)
+            {
+                Modalidades modalidades = new Modalidades();
+
+                modalidades.ID = modalidade.ID;
+                modalidades.Descricao = modalidade.Descricao;
+                modalidades.Valor = modalidade.Valor;
+
+                listaModalidades.Add(modalidades);
+            }
+            if (response.Success)
+            {
+                var dataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
+                dataGridViewCheckBoxColumn.Name = "Checkbox";
+                dataGridViewCheckBoxColumn.HeaderText = "Selecionado";
+                dataGridViewCheckBoxColumn.FalseValue = false;
+                dataGridViewCheckBoxColumn.TrueValue = true;
+
+                //Make the default checked
+                dataGridViewCheckBoxColumn.CellTemplate.Value = true;
+                dataGridViewCheckBoxColumn.CellTemplate.Style.NullValue = false;
+
+                dgvModalidade.Columns.Insert(0, dataGridViewCheckBoxColumn);
+
+                this.dgvModalidade.DataSource = listaModalidades;
+            }
+            else
+            {
+                MessageBox.Show(response.Message);
+            }
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)

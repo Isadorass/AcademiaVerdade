@@ -44,13 +44,15 @@ namespace WinFormPresetaionLayer.Atualizar
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnDesativar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
+            this.dgvModalidade = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvModalidade)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpDataMatricula
             // 
             this.dtpDataMatricula.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataMatricula.Location = new System.Drawing.Point(159, 146);
+            this.dtpDataMatricula.Location = new System.Drawing.Point(21, 142);
             this.dtpDataMatricula.Name = "dtpDataMatricula";
             this.dtpDataMatricula.Size = new System.Drawing.Size(119, 20);
             this.dtpDataMatricula.TabIndex = 76;
@@ -61,7 +63,7 @@ namespace WinFormPresetaionLayer.Atualizar
             this.lblDataMatricula.BackColor = System.Drawing.Color.Transparent;
             this.lblDataMatricula.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDataMatricula.ForeColor = System.Drawing.Color.Black;
-            this.lblDataMatricula.Location = new System.Drawing.Point(156, 125);
+            this.lblDataMatricula.Location = new System.Drawing.Point(19, 122);
             this.lblDataMatricula.Name = "lblDataMatricula";
             this.lblDataMatricula.Size = new System.Drawing.Size(103, 18);
             this.lblDataMatricula.TabIndex = 77;
@@ -73,7 +75,7 @@ namespace WinFormPresetaionLayer.Atualizar
             this.lblTelefoneFixo.BackColor = System.Drawing.Color.Transparent;
             this.lblTelefoneFixo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefoneFixo.ForeColor = System.Drawing.Color.Black;
-            this.lblTelefoneFixo.Location = new System.Drawing.Point(226, 175);
+            this.lblTelefoneFixo.Location = new System.Drawing.Point(153, 175);
             this.lblTelefoneFixo.Name = "lblTelefoneFixo";
             this.lblTelefoneFixo.Size = new System.Drawing.Size(97, 18);
             this.lblTelefoneFixo.TabIndex = 71;
@@ -81,9 +83,9 @@ namespace WinFormPresetaionLayer.Atualizar
             // 
             // txtTelefoneFixo
             // 
-            this.txtTelefoneFixo.Location = new System.Drawing.Point(229, 196);
+            this.txtTelefoneFixo.Location = new System.Drawing.Point(156, 196);
             this.txtTelefoneFixo.Name = "txtTelefoneFixo";
-            this.txtTelefoneFixo.Size = new System.Drawing.Size(213, 20);
+            this.txtTelefoneFixo.Size = new System.Drawing.Size(158, 20);
             this.txtTelefoneFixo.TabIndex = 70;
             // 
             // lblNome
@@ -106,7 +108,7 @@ namespace WinFormPresetaionLayer.Atualizar
             "Masculino",
             "Feminino",
             "Outros"});
-            this.cmbGenero.Location = new System.Drawing.Point(288, 144);
+            this.cmbGenero.Location = new System.Drawing.Point(156, 141);
             this.cmbGenero.Name = "cmbGenero";
             this.cmbGenero.Size = new System.Drawing.Size(154, 21);
             this.cmbGenero.TabIndex = 66;
@@ -115,7 +117,7 @@ namespace WinFormPresetaionLayer.Atualizar
             // 
             this.txtTelefoneCelular.Location = new System.Drawing.Point(21, 196);
             this.txtTelefoneCelular.Name = "txtTelefoneCelular";
-            this.txtTelefoneCelular.Size = new System.Drawing.Size(202, 20);
+            this.txtTelefoneCelular.Size = new System.Drawing.Size(130, 20);
             this.txtTelefoneCelular.TabIndex = 74;
             // 
             // lblTelefoneCelular
@@ -147,14 +149,14 @@ namespace WinFormPresetaionLayer.Atualizar
             this.txtNome.BackColor = System.Drawing.SystemColors.Window;
             this.txtNome.Location = new System.Drawing.Point(21, 40);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(256, 20);
+            this.txtNome.Size = new System.Drawing.Size(289, 20);
             this.txtNome.TabIndex = 62;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(21, 94);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(257, 20);
+            this.txtEmail.Size = new System.Drawing.Size(289, 20);
             this.txtEmail.TabIndex = 64;
             // 
             // lblGenero
@@ -163,7 +165,7 @@ namespace WinFormPresetaionLayer.Atualizar
             this.lblGenero.BackColor = System.Drawing.Color.Transparent;
             this.lblGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenero.ForeColor = System.Drawing.Color.Black;
-            this.lblGenero.Location = new System.Drawing.Point(285, 123);
+            this.lblGenero.Location = new System.Drawing.Point(153, 120);
             this.lblGenero.Name = "lblGenero";
             this.lblGenero.Size = new System.Drawing.Size(58, 18);
             this.lblGenero.TabIndex = 73;
@@ -172,9 +174,9 @@ namespace WinFormPresetaionLayer.Atualizar
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(461, 19);
+            this.dataGridView1.Location = new System.Drawing.Point(333, 19);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 258);
+            this.dataGridView1.Size = new System.Drawing.Size(240, 119);
             this.dataGridView1.TabIndex = 80;
             // 
             // btnDesativar
@@ -182,9 +184,9 @@ namespace WinFormPresetaionLayer.Atualizar
             this.btnDesativar.BackColor = System.Drawing.Color.Black;
             this.btnDesativar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDesativar.ForeColor = System.Drawing.Color.White;
-            this.btnDesativar.Location = new System.Drawing.Point(250, 237);
+            this.btnDesativar.Location = new System.Drawing.Point(167, 237);
             this.btnDesativar.Name = "btnDesativar";
-            this.btnDesativar.Size = new System.Drawing.Size(192, 40);
+            this.btnDesativar.Size = new System.Drawing.Size(150, 40);
             this.btnDesativar.TabIndex = 82;
             this.btnDesativar.Text = "Desativar";
             this.btnDesativar.UseVisualStyleBackColor = false;
@@ -197,16 +199,27 @@ namespace WinFormPresetaionLayer.Atualizar
             this.btnCadastrar.ForeColor = System.Drawing.Color.White;
             this.btnCadastrar.Location = new System.Drawing.Point(22, 237);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(203, 40);
+            this.btnCadastrar.Size = new System.Drawing.Size(139, 40);
             this.btnCadastrar.TabIndex = 81;
             this.btnCadastrar.Text = "Atualizar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            // 
+            // dgvModalidade
+            // 
+            this.dgvModalidade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvModalidade.Location = new System.Drawing.Point(333, 159);
+            this.dgvModalidade.Name = "dgvModalidade";
+            this.dgvModalidade.Size = new System.Drawing.Size(240, 132);
+            this.dgvModalidade.TabIndex = 83;
+            this.dgvModalidade.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // FormAtualizarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(718, 296);
+            this.ClientSize = new System.Drawing.Size(599, 296);
+            this.Controls.Add(this.dgvModalidade);
             this.Controls.Add(this.btnDesativar);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.dataGridView1);
@@ -225,6 +238,7 @@ namespace WinFormPresetaionLayer.Atualizar
             this.Name = "FormAtualizarCliente";
             this.Text = "FormAtualizarCliente";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvModalidade)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,5 +260,6 @@ namespace WinFormPresetaionLayer.Atualizar
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnDesativar;
         private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.DataGridView dgvModalidade;
     }
 }

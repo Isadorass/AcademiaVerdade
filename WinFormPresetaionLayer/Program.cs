@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsPresentationLayer;
 
+
 namespace WinFormPresetaionLayer
 {
     static class Program
@@ -17,7 +18,7 @@ namespace WinFormPresetaionLayer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
+            Application.Run(new FormMenu());
         }
     }
 }

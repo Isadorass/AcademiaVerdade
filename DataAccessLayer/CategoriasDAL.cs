@@ -102,7 +102,7 @@ namespace DataAccessLayer
 
             SqlCommand command = new SqlCommand();
             command.Connection = connection;
-            command.CommandText = "INSERT INTO CATEGORIAS (NOME) VALUES (@NOME)";
+            command.CommandText = "INSERT INTO CATEGORIA (NOME) VALUES (@NOME)";
             command.Parameters.AddWithValue("@NOME", c.Nome);
 
             Response resposta = new Response();
@@ -118,7 +118,7 @@ namespace DataAccessLayer
             {
                 resposta.Success = false;
 
-                if (ex.Message.Contains("UQ__CATEGORIAS"))
+                if (ex.Message.Contains("UQ__CATEGORIA"))
                 {
                     resposta.Message = "Categoria já cadastrada!";
                     return resposta;

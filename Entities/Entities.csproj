@@ -54,7 +54,6 @@
     <Compile Include="Interfaces\IProdutosService.cs" />
     <Compile Include="Interfaces\IFuncionarioService.cs" />
     <Compile Include="Modalidades.cs" />
-    <Compile Include="Planos.cs" />
     <Compile Include="Produtos.cs" />
     <Compile Include="Funcionario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,8 +64,6 @@
       <Name>Shared</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Enum\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
